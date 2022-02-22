@@ -133,8 +133,9 @@ INSTALLED_APPS = (
     'mayan.apps.sources',
     'mayan.apps.tags',
     'mayan.apps.web_links',
+    'mayan.apps.candidates',
     # Placed after rest_api to allow template overriding.
-    'drf_yasg'
+    'drf_yasg',
 )
 
 MIDDLEWARE = (

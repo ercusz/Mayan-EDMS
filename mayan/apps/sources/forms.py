@@ -16,7 +16,24 @@ from .models import Source
 logger = logging.getLogger(name=__name__)
 
 
-class NewDocumentForm(DocumentForm):
+class NewDocumentForm(DocumentForm, forms.Form):
+    fullname = forms.CharField(
+        help_text=_('ไม่ต้องมีคำนำหน้า'),
+        label=_('ชื่อ-นามสกุล'), required=True,
+        max_length=256
+    )
+    ssn = forms.CharField(
+        label=_('รหัสบัตรประจำตัวประชาชน'), required=True,
+        max_length=13
+    )
+    tel = forms.CharField(
+        label=_('เบอร์โทรศัพท์'), required=True,
+        max_length=10
+    )
+    email = forms.EmailField(
+        label=_('อีเมล'), required=True,
+        max_length=256
+    )
     class Meta(DocumentForm.Meta):
         exclude = ('label', 'description')
 
