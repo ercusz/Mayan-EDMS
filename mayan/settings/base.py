@@ -241,6 +241,7 @@ LANGUAGES = (
     ('ro', _('Romanian')),
     ('ru', _('Russian')),
     ('sl', _('Slovenian')),
+    ('th', _('Thai')),
     ('tr', _('Turkish')),
     ('vi', _('Vietnamese')),
     ('zh-hans', _('Chinese (Simplified)'))

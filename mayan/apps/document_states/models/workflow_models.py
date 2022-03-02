@@ -206,8 +206,10 @@ class Workflow(ExtraDataModelMixin, models.Model):
     def render(self):
         diagram = Digraph(
             name='finite_state_machine', graph_attr={
-                'rankdir': 'LR', 'splines': 'polyline'
-            }, format='png'
+                'rankdir': 'LR', 
+                'splines': 'polyline',
+                'fontname': 'TH Niramit AS',
+            }, format='png',
         )
 
         action_cache = {}
@@ -261,7 +263,8 @@ class Workflow(ExtraDataModelMixin, models.Model):
                 'label': value['label'],
                 'shape': 'doublecircle' if value['connections']['origin'] == 0 or value['connections']['destination'] == 0 or value['initial'] else 'circle',
                 'style': 'filled' if value['initial'] else '',
-                'fillcolor': '#eeeeee',
+                'fillcolor': '#9DD390',
+                
             }
             diagram.node(**kwargs)
 

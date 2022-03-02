@@ -276,6 +276,12 @@ link_workflow_runtime_proxy_state_list = Link(
     permissions=(permission_workflow_template_view,),
     text=_('States'), view='document_states:workflow_runtime_proxy_state_list',
 )
+link_workflow_runtime_proxy_preview = Link(
+    args='resolved_object.pk',
+    icon=icon_workflow_template_preview,
+    permissions=(permission_workflow_template_view,),
+    text=_('Preview'), view='document_states:workflow_template_preview'
+)
 
 # Tools
 

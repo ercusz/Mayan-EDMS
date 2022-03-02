@@ -13,6 +13,7 @@ ifndef SETTINGS
 override SETTINGS = mayan.settings.testing.development
 endif
 
+ADDRPORT = 0:8000
 TEST_COMMAND = ./manage.py test $(MODULE) --settings=$(SETTINGS) $(SKIPMIGRATIONS) $(DEBUG) $(ARGUMENTS)
 
 TEST_MYSQL_CONTAINER_NAME = mayan-test-mysql
@@ -25,6 +26,11 @@ TEST_REDIS_CONTAINER_NAME = mayan-staging-redis
 help:
 	@echo "Usage: make <target>\n"
 	@awk 'BEGIN {FS = ":.*##"} /^[0-9a-zA-Z_-]+:.*?## / { printf "  * %-40s -%s\n", $$1, $$2 }' $(MAKEFILE_LIST)|sort
+
+# Virtualenv
+
+create-venv:
+	test -d venv || python3 -m venv ~/.virtualenvs/mayan-edms-4.2.1
 
 # Cleaning
 
@@ -502,6 +508,7 @@ check-missing-inits:
 	@contrib/scripts/find_missing_inits.py
 
 setup-dev-environment: ## Bootstrap a virtualenv by install all dependencies to start developing.
+	sudo apt-get update
 	sudo apt-get install --yes exiftool firefox-geckodriver gcc gettext gnupg1 graphviz libjpeg-dev libpng-dev poppler-utils python3-dev sane-utils tesseract-ocr-deu
 	pip install --requirement requirements.txt --requirement requirements/development.txt --requirement requirements/testing-base.txt --requirement requirements/documentation.txt --requirement requirements/build.txt
 

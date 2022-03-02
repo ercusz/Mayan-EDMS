@@ -57,7 +57,8 @@ from .links import (
     link_workflow_template_transition_field_create,
     link_workflow_template_transition_field_delete,
     link_workflow_template_transition_field_edit,
-    link_workflow_template_transition_field_list
+    link_workflow_template_transition_field_list,
+    link_workflow_runtime_proxy_preview
 )
 from .permissions import (
     permission_workflow_template_delete, permission_workflow_template_edit,
@@ -516,6 +517,7 @@ class DocumentStatesApp(MayanAppConfig):
             links=(
                 link_workflow_runtime_proxy_document_list,
                 link_workflow_runtime_proxy_state_list,
+                link_workflow_runtime_proxy_preview,
             ), sources=(WorkflowRuntimeProxy,)
         )
         menu_list_facet.bind_links(
