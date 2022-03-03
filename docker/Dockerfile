@@ -58,8 +58,12 @@ apt-get update \
     sane-utils \
     sudo \
     tesseract-ocr \
+    wget \
+    xfonts-thai \
 && apt-get install --no-install-recommends --target-release bullseye --yes \
     supervisor \
+# install thai-fonts
+&& wget ftp://ftp.psu.ac.th/pub/thaifonts/sipa-fonts/*ttf -P /usr/share/fonts/truetype/thai \
 # Remove make and build dependencies.
 && apt-get remove --purge --yes \
     make \

@@ -7,7 +7,8 @@
 
 FROM {{ DOCKER_LINUX_IMAGE_VERSION }} as base_image
 
-LABEL maintainer="Roberto Rosario roberto.rosario@mayan-edms.com"
+LABEL maintainer="contact@wachirawitch.works"
+LABEL description="this image created for working in SC313004"
 
 COPY config.env /config.env
 
@@ -57,8 +58,12 @@ apt-get update \
     sane-utils \
     sudo \
     tesseract-ocr \
+    wget \
+    xfonts-thai \
 && apt-get install --no-install-recommends --target-release bullseye --yes \
     supervisor \
+# install thai-fonts
+&& wget ftp://ftp.psu.ac.th/pub/thaifonts/sipa-fonts/*ttf -P /usr/share/fonts/truetype/thai \
 # Remove make and build dependencies.
 && apt-get remove --purge --yes \
     make \
