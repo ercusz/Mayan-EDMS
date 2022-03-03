@@ -7,7 +7,8 @@
 
 FROM debian:10.10-slim as base_image
 
-LABEL maintainer="Roberto Rosario roberto.rosario@mayan-edms.com"
+LABEL maintainer="contact@wachirawitch.works"
+LABEL description="this image created for working in SC313004"
 
 COPY config.env /config.env
 
