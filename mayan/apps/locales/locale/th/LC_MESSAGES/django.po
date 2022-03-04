@@ -24,36 +24,36 @@ msgstr ""
 
 #: links.py:13
 msgid "Locale profile"
-msgstr ""
+msgstr "โปรไฟล์ Locale"
 
 #: links.py:18
 msgid "Edit locale profile"
-msgstr ""
+msgstr "แก้ไขโปรไฟล์ Locale"
 
 #: models.py:18
 msgid "User"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #: models.py:22
 msgid "Timezone"
-msgstr ""
+msgstr "เขตเวลา"
 
 #: models.py:25
 msgid "Language"
-msgstr ""
+msgstr "ภาษา"
 
 #: models.py:31
 msgid "User locale profile"
-msgstr ""
+msgstr "โปรไฟล์ Locale ของผู้ใช้"
 
 #: models.py:32
 msgid "User locale profiles"
-msgstr ""
+msgstr "โปรไฟล์ Locale ของผู้ใช้"
 
 #: views.py:24
 msgid "Current user locale profile details"
-msgstr ""
+msgstr "รายละเอียดโปรไฟล์ Locale ของผู้ใช้"
 
 #: views.py:30
 msgid "Edit current user locale profile details"
-msgstr ""
+msgstr "แก้ไขรายละเอียดโปรไฟล์ Locale ของผู้ใช้"

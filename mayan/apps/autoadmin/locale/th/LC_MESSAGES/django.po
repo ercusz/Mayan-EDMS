@@ -67,29 +67,29 @@ msgstr ""
 msgid ""
 "You have just finished installing <strong>%(project_title)s</strong>, "
 "congratulations!"
-msgstr ""
+msgstr "ยินดีด้วย🎉 คุณติดตั้ง <strong>%(project_title)s</strong> สำเร็จแล้ว!"
 
 #: templates/autoadmin/credentials.html:17
 msgid "Login using the following credentials:"
-msgstr ""
+msgstr "เข้าสู่ระบบโดยใช้ credentials ดังนี้"
 
 #: templates/autoadmin/credentials.html:19
 #, python-format
 msgid "Username: <strong>%(account)s</strong>"
-msgstr ""
+msgstr "ชื่อผู้ใช้: <strong>%(account)s</strong>"
 
 #: templates/autoadmin/credentials.html:20
 #, python-format
 msgid "Email: <strong>%(email)s</strong>"
-msgstr ""
+msgstr "อีเมล: <strong>%(email)s</strong>"
 
 #: templates/autoadmin/credentials.html:21
 #, python-format
 msgid "Password: <strong>%(password)s</strong>"
-msgstr ""
+msgstr "รหัสผ่าน: <strong>%(password)s</strong>"
 
 #: templates/autoadmin/credentials.html:23
 msgid ""
 "Be sure to change the password to increase security and to disable this "
 "message."
-msgstr ""
+msgstr "อย่าลืมเปลี่ยนรหัสผ่านเพื่อยกระดับความปลอดภัย และปิดใช้งานข้อความนี้ด้วย!"

@@ -32,23 +32,23 @@ msgstr ""
 
 #: events.py:16
 msgid "User logged in"
-msgstr ""
+msgstr "ผู้ใช้เข้าสู่ระบบแล้ว"
 
 #: events.py:19
 msgid "User logged out"
-msgstr ""
+msgstr "ผู้ใช้ออกจากระบบแล้ว"
 
 #: forms.py:20
 msgid "Email"
-msgstr ""
+msgstr "อีเมล"
 
 #: forms.py:23
 msgid "Password"
-msgstr ""
+msgstr "รหัสผ่าน"
 
 #: forms.py:25 forms.py:105
 msgid "Remember me"
-msgstr ""
+msgstr "จดจำฉัน"
 
 #: forms.py:28
 msgid ""
@@ -70,15 +70,15 @@ msgstr ""
 
 #: forms.py:91
 msgid "User"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #: links.py:35
 msgid "Logout"
-msgstr ""
+msgstr "ออกจากระบบ"
 
 #: links.py:40
 msgid "Change password"
-msgstr ""
+msgstr "เปลี่ยนรหัสผ่าน"
 
 #: links.py:45 views/impersonation_views.py:50
 msgid "Impersonate user"
@@ -90,7 +90,7 @@ msgstr ""
 
 #: links.py:55 links.py:60
 msgid "Set password"
-msgstr ""
+msgstr "ตั้งค่ารหัสผ่าน"
 
 #: permissions.py:10
 msgid "Impersonate users"
@@ -128,16 +128,16 @@ msgstr ""
 
 #: templates/authentication/login.html:10
 msgid "Login"
-msgstr ""
+msgstr "เข้าสู่ระบบ"
 
 #: templates/authentication/login.html:21
 #: templates/authentication/login.html:30
 msgid "Sign in"
-msgstr ""
+msgstr "เข้าสู่ระบบ"
 
 #: templates/authentication/login.html:37
 msgid "Forgot your password?"
-msgstr ""
+msgstr "ลืมรหัสผ่าน"
 
 #: templates/authentication/password_reset_complete.html:8
 #: templates/authentication/password_reset_confirm.html:8
@@ -146,36 +146,36 @@ msgstr ""
 #: templates/authentication/password_reset_form.html:8
 #: templates/authentication/password_reset_form.html:20
 msgid "Password reset"
-msgstr ""
+msgstr "รีเซ็ตรหัสผ่าน"
 
 #: templates/authentication/password_reset_complete.html:15
 msgid "Password reset complete! Click the link below to login."
-msgstr ""
+msgstr "รีเซ็ตรหัสผ่านสำเร็จ! คลิกที่ลิงก์ข้างล่างเพื่อเข้าสู่ระบบ"
 
 #: templates/authentication/password_reset_complete.html:17
 msgid "Login page"
-msgstr ""
+msgstr "หน้าล็อกอิน"
 
 #: templates/authentication/password_reset_confirm.html:29
 #: templates/authentication/password_reset_form.html:29
 msgid "Submit"
-msgstr ""
+msgstr "ยืนยัน"
 
 #: templates/authentication/password_reset_done.html:15
 msgid "Password reset email sent!"
-msgstr ""
+msgstr "ลิงก์สำหรับการรีเซ็ตรหัสผ่านถูกส่งไปยังอีเมลของคุณแล้ว"
 
 #: views/authentication_views.py:75
 msgid "Your password has been successfully changed."
-msgstr ""
+msgstr "เปลี่ยนรหัสผ่านของคุณสำเร็จ"
 
 #: views/authentication_views.py:82
 msgid "Current user password change"
-msgstr ""
+msgstr "เปลี่ยนรหัสผ่านปัจจุบัน"
 
 #: views/authentication_views.py:90
 msgid "Changing the password is not allowed for this account."
-msgstr ""
+msgstr "ไม่ได้รับอนุญาตให้ทำการเปลี่ยนรหัสผ่านสำหรับบัญชีนี้"
 
 #: views/authentication_views.py:157
 #, python-format

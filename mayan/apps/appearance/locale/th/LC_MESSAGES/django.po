@@ -72,49 +72,49 @@ msgstr ""
 
 #: events.py:8
 msgid "Theme created"
-msgstr ""
+msgstr "สร้างธีมสำเร็จ"
 
 #: events.py:11
 msgid "Theme edited"
-msgstr ""
+msgstr "แก้ไขธีมสำเร็จ"
 
 #: links.py:16
 msgid "Theme settings"
-msgstr ""
+msgstr "การตั้งค่าธีม"
 
 #: links.py:21
 msgid "Edit theme settings"
-msgstr ""
+msgstr "แก้ไขการตั้งค่าธีม"
 
 #: links.py:27 views.py:47
 msgid "Create new theme"
-msgstr ""
+msgstr "สร้างธีมใหม่"
 
 #: links.py:32
 msgid "Delete"
-msgstr ""
+msgstr "ลบ"
 
 #: links.py:36
 msgid "Edit"
-msgstr ""
+msgstr "แก้ไข"
 
 #: links.py:40 links.py:45 models.py:31 views.py:111
 msgid "Themes"
-msgstr ""
+msgstr "ธีม"
 
 #: models.py:18
 msgid "A short text describing the theme."
-msgstr ""
+msgstr "ข้อความสั้น ๆ ที่ใช้ในการอธิบายธีม"
 
 #: models.py:19
 msgid "Label"
-msgstr ""
+msgstr "ป้ายกำกับ"
 
 #: models.py:23
 msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
-msgstr ""
+msgstr "CSS stylesheet สำหรับใช้ในการเปลี่ยนการแสดงผลของหน้าเว็บ"
 
 #: models.py:25
 msgid "Stylesheet"
@@ -122,35 +122,35 @@ msgstr ""
 
 #: models.py:30 models.py:68
 msgid "Theme"
-msgstr ""
+msgstr "ธีม"
 
 #: models.py:64
 msgid "User"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #: models.py:72
 msgid "User theme setting"
-msgstr ""
+msgstr "การตั้งค่าธีมของผู้ใช้"
 
 #: models.py:73
 msgid "User theme settings"
-msgstr ""
+msgstr "การตั้งค่าธีมของผู้ใช้"
 
 #: permissions.py:8
 msgid "Create new themes"
-msgstr ""
+msgstr "สร้างธีมใหม่"
 
 #: permissions.py:11
 msgid "Delete themes"
-msgstr ""
+msgstr "ลบธีม"
 
 #: permissions.py:14
 msgid "Edit themes"
-msgstr ""
+msgstr "แก้ไขธีม"
 
 #: permissions.py:17
 msgid "View existing themes"
-msgstr ""
+msgstr "ดูธีมที่มีอยู่"
 
 #: settings.py:15
 msgid "Maximum number of characters that will be displayed as the view title."
@@ -169,15 +169,15 @@ msgstr ""
 
 #: templates/403.html:5 templates/403.html:30
 msgid "Insufficient permission"
-msgstr ""
+msgstr "สิทธิ์ไม่เพียงพอ"
 
 #: templates/403.html:32
 msgid "You don't have enough permissions for this operation."
-msgstr ""
+msgstr "คุณไม่มีสิทธิ์สำหรับการดำเนินการในส่วนนี้"
 
 #: templates/404.html:5 templates/404.html:30
 msgid "Page not found"
-msgstr ""
+msgstr "ไม่พบหน้าที่คุณกำลังตามหา"
 
 #: templates/404.html:32
 msgid "The requested page could not be found."
@@ -203,27 +203,27 @@ msgstr ""
 
 #: templates/500.html:5 templates/500.html:30 templates/appearance/root.html:48
 msgid "Server error"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดกับเซิร์ฟเวอร์"
 
 #: templates/500.html:32
 msgid "There's been an unexpected error."
-msgstr ""
+msgstr "เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ"
 
 #: templates/500.html:40
 msgid "What to do next?"
-msgstr ""
+msgstr "จะทำอะไรต่องั้นเหรอ?"
 
 #: templates/500.html:44
 msgid "Refresh the page."
-msgstr ""
+msgstr "รีเฟรชหน้าเว็บ"
 
 #: templates/500.html:45
 msgid "Wait a bit. The system might be overloaded."
-msgstr ""
+msgstr "โปรดรอสักครู่ ระบบกำลังทำงานอย่างหนักหน่วง"
 
 #: templates/500.html:46
 msgid "Contact your system administrator."
-msgstr ""
+msgstr "ติดต่อผู้ดูแลระบบ"
 
 #: templates/500.html:47
 msgid ""
@@ -238,7 +238,7 @@ msgstr ""
 
 #: templates/appearance/about.html:10
 msgid "About"
-msgstr ""
+msgstr "เกี่ยวกับ"
 
 #: templates/appearance/about.html:72
 #, python-format
@@ -309,45 +309,45 @@ msgstr ""
 
 #: templates/appearance/generic_confirm.html:13
 msgid "Are you sure?"
-msgstr ""
+msgstr "คุณแน่ใจแล้วใช่หรือไม่?"
 
 #: templates/appearance/generic_confirm.html:37
 msgid "Yes"
-msgstr ""
+msgstr "ใช่"
 
 #: templates/appearance/generic_confirm.html:47
 msgid "No"
-msgstr ""
+msgstr "ไม่ใช่"
 
 #: templates/appearance/generic_form_instance.html:51
 #: templates/appearance/generic_form_instance.html:57
 #: templates/appearance/generic_form_subtemplate.html:50
 #: templates/appearance/generic_multiform_subtemplate.html:37
 msgid "required"
-msgstr ""
+msgstr "จำเป็น"
 
 #: templates/appearance/generic_form_subtemplate.html:84
 #: templates/appearance/generic_form_subtemplate.html:94
 #: templates/appearance/generic_form_subtemplate.html:108
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Save"
-msgstr ""
+msgstr "บันทึก"
 
 #: templates/appearance/generic_form_subtemplate.html:84
 #: templates/appearance/generic_form_subtemplate.html:94
 #: templates/appearance/generic_form_subtemplate.html:108
 #: templates/appearance/generic_multiform_subtemplate.html:62
 msgid "Submit"
-msgstr ""
+msgstr "ยืนยัน"
 
 #: templates/appearance/generic_form_subtemplate.html:98
 #: templates/appearance/generic_multiform_subtemplate.html:66
 msgid "Cancel"
-msgstr ""
+msgstr "ยกเลิก"
 
 #: templates/appearance/generic_list_subtemplate.html:34
 msgid "Identifier"
-msgstr ""
+msgstr "รหัสประจำตัว"
 
 #: templates/appearance/generic_list_subtemplate.html:133
 msgid "Facets"
@@ -355,19 +355,23 @@ msgstr ""
 
 #: templates/appearance/home.html:27
 msgid "Getting started"
-msgstr ""
+msgstr "เริ่มต้นใช้งาน"
 
 #: templates/appearance/home.html:30
 msgid "Before you can fully use Mayan EDMS you need the following:"
-msgstr ""
+msgstr "ก่อนที่คุณจะสามารถใช้ Mayan EDMS ได้อย่างเต็มที่ คุณต้องทำตามสิ่งนี้:"
 
 #: templates/appearance/menus/menu_topbar.html:11
 msgid "Toggle navigation"
 msgstr ""
 
+#: templates/appearance/menus/menu_topbar.html:19
+msgid "College of Computing"
+msgstr "วิทยาลัยการคอมพิวเตอร์"
+
 #: templates/appearance/partials/form_title.html:10
 msgid "Open main menu"
-msgstr ""
+msgstr "เปิดเมนูหลัก"
 
 #: templates/appearance/partials/list_header.html:12
 #, python-format
@@ -380,20 +384,20 @@ msgstr ""
 #: templates/appearance/partials/list_header.html:17
 #, python-format
 msgid "Total: %(total)s"
-msgstr ""
+msgstr "จำนวนทั้งหมด: %(total)s"
 
 #: templates/appearance/partials/list_toolbar.html:13
 msgid "Select/Deselect all"
-msgstr ""
+msgstr "เลือก/ยกเลิกการเลือก ทั้งหมด"
 
 #: templates/appearance/partials/list_toolbar.html:17
 msgid "Toggle list display mode"
-msgstr ""
+msgstr "สลับโหมดแสดงรายการ"
 
 #: templates/appearance/partials/list_toolbar.html:60
 msgid ""
 "Select items to activate bulk actions. Use Shift + click to select many."
-msgstr ""
+msgstr "เลือกรายการเพื่อดำเนินการ คุณสามารถเลือกหลายรายการได้โดยการกดปุ่ม Shift ค้างไว้ จากนั้นคลิกเลือกรายการ"
 
 #: templates/appearance/partials/list_toolbar.html:65
 msgid "Bulk actions"
@@ -405,47 +409,47 @@ msgstr ""
 
 #: templates/appearance/partials/no_results.html:18
 msgid "No results"
-msgstr ""
+msgstr "ไม่พบผลลัพธ์"
 
 #: templates/appearance/root.html:53
 msgid "Close"
-msgstr ""
+msgstr "ปิด"
 
 #: templates/appearance/root.html:61
 msgid "Server communication error"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดในการติดต่อกับเซิร์ฟเวอร์"
 
 #: templates/appearance/root.html:63
 msgid "Check you network connection and try again in a few moments."
-msgstr ""
+msgstr "โปรดตรวจสอบสัญญาณของคุณ และเชื่อมต่อใหม่ในภายหลัง"
 
 #: templatetags/appearance_tags.py:61
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: views.py:29
 msgid "Current user theme settings details"
-msgstr ""
+msgstr "ธีมปัจจุบันของคุณ"
 
 #: views.py:35
 msgid "Edit current user theme settings details"
-msgstr ""
+msgstr "แก้ไขการตั้งค่าธีมของคุณ"
 
 #: views.py:69
 #, python-format
 msgid "Delete theme: %s"
-msgstr ""
+msgstr "ลบธีม: %s"
 
 #: views.py:85
 #, python-format
 msgid "Edit theme: %s"
-msgstr ""
+msgstr "แก้ไขธีม: %s"
 
 #: views.py:105
 msgid ""
 "Themes allow changing the visual appearance without requiring code changes."
-msgstr ""
+msgstr "ธีมช่วยเปลี่ยนการแสดงผลหน้าเว็บโดยที่ไม่จำเป็นต้องเขียนโค้ด"
 
 #: views.py:109
 msgid "There are no themes"
-msgstr ""
+msgstr "ไม่มีธีม"

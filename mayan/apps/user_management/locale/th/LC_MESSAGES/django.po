@@ -20,36 +20,36 @@ msgstr ""
 
 #: apps.py:75 events.py:6 permissions.py:6
 msgid "User management"
-msgstr ""
+msgstr "จัดการผู้ใช้"
 
 #: apps.py:90 search.py:10
 msgid "Group"
-msgstr ""
+msgstr "กลุ่ม"
 
 #: apps.py:91 apps.py:118 links.py:64 links.py:78 links.py:107 search.py:34
 #: views.py:132
 msgid "Groups"
-msgstr ""
+msgstr "กลุ่ม"
 
 #: apps.py:92 search.py:16
 msgid "Name"
-msgstr ""
+msgstr "ชื่อ"
 
 #: apps.py:112 models.py:16 search.py:22
 msgid "User"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #: apps.py:113 apps.py:217 links.py:69 links.py:110 links.py:128 views.py:277
 msgid "Users"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #: apps.py:116 search.py:31
 msgid "Email"
-msgstr ""
+msgstr "อีเมล"
 
 #: apps.py:117 search.py:28
 msgid "First name"
-msgstr ""
+msgstr "ชื่อ"
 
 #: apps.py:119
 msgid "Is active?"
@@ -57,147 +57,147 @@ msgstr ""
 
 #: apps.py:120 search.py:37
 msgid "Last name"
-msgstr ""
+msgstr "นามสกุล"
 
 #: apps.py:121
 msgid "Password"
-msgstr ""
+msgstr "รหัสผ่าน"
 
 #: apps.py:122
 msgid "Username"
-msgstr ""
+msgstr "ชื่อผู้ใช้"
 
 #: apps.py:123
 msgid "Last login"
-msgstr ""
+msgstr "การเข้าสู่ระบบล่าสุด"
 
 #: apps.py:147
 msgid "Has usable password?"
-msgstr ""
+msgstr "มีพาสเวิร์ดที่ใช้งานได้หรือไม่?"
 
 #: apps.py:154
 msgid "All the groups."
-msgstr ""
+msgstr "กลุ่มทั้งหมด"
 
 #: apps.py:158
 msgid "All the users."
-msgstr ""
+msgstr "ผู้ใช้ทั้งหมด"
 
 #: dashboard_widgets.py:14
 msgid "Total users"
-msgstr ""
+msgstr "จำนวนผู้ใช้ทั้งหมด"
 
 #: dashboard_widgets.py:29
 msgid "Total groups"
-msgstr ""
+msgstr "จำนวนกลุ่มทั้งหมด"
 
 #: dashboards.py:5
 msgid "User dashboard"
-msgstr ""
+msgstr "แดชบอร์ดของผู้ใช้"
 
 #: events.py:10
 msgid "Group created"
-msgstr ""
+msgstr "สร้างกลุ่มสำเร็จ"
 
 #: events.py:13
 msgid "Group edited"
-msgstr ""
+msgstr "แก้ไขกลุ่มสำเร็จ"
 
 #: events.py:17
 msgid "User created"
-msgstr ""
+msgstr "สร้างผู้ใช้สำเร็จ"
 
 #: events.py:20
 msgid "User edited"
-msgstr ""
+msgstr "แก้ไขผู้ใช้สำเร็จ"
 
 #: events.py:25
 msgid "User logged in"
-msgstr ""
+msgstr "ผู้ใช้เข้าสู่ระบบแล้ว"
 
 #: events.py:28
 msgid "User logged out"
-msgstr ""
+msgstr "ผู้ใช้ออกจากระบบแล้ว"
 
 #: links.py:32
 msgid "User details"
-msgstr ""
+msgstr "รายละเอียดผู้ใช้"
 
 #: links.py:36
 msgid "Edit user details"
-msgstr ""
+msgstr "แก้ไขรายละเอียดผู้ใช้"
 
 #: links.py:44 views.py:52
 msgid "Create new group"
-msgstr ""
+msgstr "สร้างกลุ่มใหม่"
 
 #: links.py:49 links.py:52 links.py:92 links.py:96
 msgid "Delete"
-msgstr ""
+msgstr "ลบ"
 
 #: links.py:57 links.py:101
 msgid "Edit"
-msgstr ""
+msgstr "แก้ไข"
 
 #: links.py:86 views.py:164
 msgid "Create new user"
-msgstr ""
+msgstr "สร้างผู้ใช้ใหม่"
 
 #: links.py:121
 msgid "User options"
-msgstr ""
+msgstr "ตัวเลือกผู้ใช้"
 
 #: models.py:20
 msgid "Forbid this user from changing their password."
-msgstr ""
+msgstr "ห้ามมิให้ผู้ใช้รายนี้เปลี่ยนรหัสผ่าน"
 
 #: models.py:26
 msgid "User settings"
-msgstr ""
+msgstr "การตั้งค่าผู้ใช้"
 
 #: models.py:27
 msgid "Users settings"
-msgstr ""
+msgstr "การตั้งค่าผู้ใช้"
 
 #: permissions.py:10
 msgid "Create new groups"
-msgstr ""
+msgstr "สร้างกลุ่มใหม่"
 
 #: permissions.py:13
 msgid "Delete existing groups"
-msgstr ""
+msgstr "ลบกลุ่มที่มีอยู่"
 
 #: permissions.py:16
 msgid "Edit existing groups"
-msgstr ""
+msgstr "แก้ไขกลุ่มที่มีอยู่"
 
 #: permissions.py:19
 msgid "View existing groups"
-msgstr ""
+msgstr "ดูกลุ่มที่มีอยู่"
 
 #: permissions.py:22
 msgid "Create new users"
-msgstr ""
+msgstr "สร้างผู้ใช้ใหม่"
 
 #: permissions.py:25
 msgid "Delete existing users"
-msgstr ""
+msgstr "ลบผู้ใช้ที่มีอยู่"
 
 #: permissions.py:28
 msgid "Edit existing users"
-msgstr ""
+msgstr "แก้ไขผู้ใช้ที่มีอยู่"
 
 #: permissions.py:31
 msgid "View existing users"
-msgstr ""
+msgstr "ดูผู้ใช้ที่มีอยู่"
 
 #: search.py:40
 msgid "username"
-msgstr ""
+msgstr "ชื่อผู้ใช้"
 
 #: serializers.py:17
 msgid "URL of the API endpoint showing the list users of this group."
-msgstr ""
+msgstr "URL ของ API endpoint ที่แสดงรายการของผู้ใช้ในกลุ่มนี้"
 
 #: serializers.py:48
 msgid "Primary key of the user to add to the group."
@@ -213,60 +213,60 @@ msgstr ""
 
 #: utils.py:6
 msgid "Anonymous"
-msgstr ""
+msgstr "ไม่ระบุตัวตน"
 
 #: views.py:33
 msgid "Current user details"
-msgstr ""
+msgstr "ข้อมูลผู้ใช้ปัจจุบัน"
 
 #: views.py:41
 msgid "Edit current user details"
-msgstr ""
+msgstr "แก้ไขข้อมูลผู้ใช้ปัจจุบัน"
 
 #: views.py:65
 #, python-format
 msgid "Error deleting group \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดระหว่างการลบกลุ่ม \"%(instance)s\"; %(exception)s"
 
 #: views.py:72
 #, python-format
 msgid "Group \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "ทำการลบกลุ่ม \"%(object)s\" สำเร็จแล้ว"
 
 #: views.py:73
 #, python-format
 msgid "%(count)d group deleted successfully."
-msgstr ""
+msgstr "ลบกลุ่มจำนวน %(count)d กลุ่ม เรียบร้อยแล้ว"
 
 #: views.py:74
 #, python-format
 msgid "%(count)d groups deleted successfully."
-msgstr ""
+msgstr "ลบกลุ่มจำนวน %(count)d กลุ่ม เรียบร้อยแล้ว"
 
 #: views.py:75
 #, python-format
 msgid "Delete group: %(object)s."
-msgstr ""
+msgstr "ลบกลุ่ม: %(object)s"
 
 #: views.py:76
 #, python-format
 msgid "Delete the %(count)d selected group."
-msgstr ""
+msgstr "ลบกลุ่มที่เลือกจำนวน %(count)d กลุ่ม เรียบร้อยแล้ว"
 
 #: views.py:77
 #, python-format
 msgid "Delete the %(count)d selected groups."
-msgstr ""
+msgstr "ลบกลุ่มที่เลือกจำนวน %(count)d กลุ่ม เรียบร้อยแล้ว"
 
 #: views.py:89
 #, python-format
 msgid "Details of group: %s"
-msgstr ""
+msgstr "ข้อมูลของกลุ่ม: %s"
 
 #: views.py:105
 #, python-format
 msgid "Edit group: %s"
-msgstr ""
+msgstr "แก้ไขกลุ่ม: %s"
 
 #: views.py:125
 msgid ""
@@ -277,80 +277,80 @@ msgstr ""
 
 #: views.py:131
 msgid "There are no user groups"
-msgstr ""
+msgstr "ไม่มีกลุ่มผู้ใช้"
 
 #: views.py:144
 msgid "Available users"
-msgstr ""
+msgstr "ผู้ใช้ที่มีอยู่"
 
 #: views.py:145
 msgid "Group users"
-msgstr ""
+msgstr "กลุ่มผู้ใช้"
 
 #: views.py:153
 #, python-format
 msgid "Users of group: %s"
-msgstr ""
+msgstr "ผู้ใช้ในกลุ่ม: %s "
 
 #: views.py:184
 #, python-format
 msgid "Error deleting user \"%(instance)s\"; %(exception)s"
-msgstr ""
+msgstr "เกิดข้อผิดพลาดในการลบผู้ใช้ \"%(instance)s\"; %(exception)s"
 
 #: views.py:189
 #, python-format
 msgid "User \"%(object)s\" deleted successfully."
-msgstr ""
+msgstr "ทำการลบผู้ใช้ \"%(object)s\" สำเร็จแล้ว"
 
 #: views.py:190
 #, python-format
 msgid "%(count)d user deleted successfully."
-msgstr ""
+msgstr "ลบผู้ใช้จำนวน %(count)d คน เรียบร้อยแล้ว"
 
 #: views.py:191
 #, python-format
 msgid "%(count)d users deleted successfully."
-msgstr ""
+msgstr "ลบผู้ใช้จำนวน %(count)d คน เรียบร้อยแล้ว"
 
 #: views.py:192
 #, python-format
 msgid "Delete user: %(object)s."
-msgstr ""
+msgstr "ลบผู้ใช้: %(object)s"
 
 #: views.py:193
 #, python-format
 msgid "Delete the %(count)d selected user."
-msgstr ""
+msgstr "ลบผู้ใช้ที่เลือกจำนวน %(count)d คน เรียบร้อยแล้ว"
 
 #: views.py:194
 #, python-format
 msgid "Delete the %(count)d selected users."
-msgstr ""
+msgstr "ลบผู้ใช้ที่เลือกจำนวน %(count)d คน เรียบร้อยแล้ว"
 
 #: views.py:209
 #, python-format
 msgid "Details of user: %s"
-msgstr ""
+msgstr "ข้อมูลผู้ใช้: %s"
 
 #: views.py:225
 #, python-format
 msgid "Edit user: %s"
-msgstr ""
+msgstr "แก้ไขผู้ใช้: %s"
 
 #: views.py:240
 msgid "Available groups"
-msgstr ""
+msgstr "กลุ่มที่มีอยู่"
 
 #. Translators: "User groups" here refer to the group list of a specific
 #. user.
 #: views.py:243
 msgid "User groups"
-msgstr ""
+msgstr "กลุ่มผู้ใช้"
 
 #: views.py:251
 #, python-format
 msgid "Groups of user: %s"
-msgstr ""
+msgstr "กลุ่มผู้ใช้: %s"
 
 #: views.py:273
 msgid ""
@@ -360,9 +360,9 @@ msgstr ""
 
 #: views.py:276
 msgid "There are no user accounts"
-msgstr ""
+msgstr "ไม่พบบัญชีผู้ใช้"
 
 #: views.py:290
 #, python-format
 msgid "Edit options for user: %s"
-msgstr ""
+msgstr "แก้ไขตัวเลือกสำหรับผู้ใช้: %s"

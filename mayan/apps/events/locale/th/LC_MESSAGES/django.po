@@ -21,11 +21,11 @@ msgstr ""
 #: apps.py:31 events.py:11 links.py:61 links.py:66 links.py:84 permissions.py:5
 #: queues.py:7 views/event_views.py:30
 msgid "Events"
-msgstr ""
+msgstr "กิจกรรม"
 
 #: apps.py:59 apps.py:88
 msgid "Date and time"
-msgstr ""
+msgstr "วันที่และเวลา"
 
 #: apps.py:63 apps.py:91
 msgid "Actor"
@@ -49,11 +49,11 @@ msgstr ""
 
 #: apps.py:83 forms.py:14 forms.py:71
 msgid "Label"
-msgstr ""
+msgstr "ป้ายกำกับ"
 
 #: apps.py:110
 msgid "Seen"
-msgstr ""
+msgstr "เห็นแล้ว"
 
 #: classes.py:88
 msgid "Event list export to CSV"
@@ -77,11 +77,11 @@ msgstr ""
 
 #: events.py:15
 msgid "Events cleared"
-msgstr ""
+msgstr "ล้างกิจกรรมเรียบร้อย"
 
 #: events.py:18
 msgid "Events exported"
-msgstr ""
+msgstr "ส่งออกกิจกรรมเรียบร้อย"
 
 #: forms.py:18 forms.py:75
 msgid "Subscription"
@@ -89,7 +89,7 @@ msgstr ""
 
 #: forms.py:20 forms.py:77
 msgid "No"
-msgstr ""
+msgstr "ไม่"
 
 #: forms.py:21 forms.py:78
 msgid "Subscribed"
@@ -97,19 +97,19 @@ msgstr ""
 
 #: html_widgets.py:22
 msgid "System"
-msgstr ""
+msgstr "ระบบ"
 
 #: links.py:49
 msgid "My events"
-msgstr ""
+msgstr "กิจกรรมของฉัน"
 
 #: links.py:53 links.py:73 links.py:87 views/clear_views.py:62
 msgid "Clear events"
-msgstr ""
+msgstr "ล้างกิจกรรม"
 
 #: links.py:57 links.py:80 links.py:91 views/export_views.py:57
 msgid "Export events"
-msgstr ""
+msgstr "ส่งออกกิจกรรม"
 
 #: links.py:96 models.py:63 views/subscription_views.py:56
 msgid "Event subscriptions"

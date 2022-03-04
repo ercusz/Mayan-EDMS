@@ -1,18 +1,43 @@
 @font-face {
-    font-family: 'IM Fell English SC';
+    font-family: 'Prompt-Regular';
     font-style: normal;
     font-weight: normal;
     src:
-        local('IM FELL English SC'),
-        local('IM_FELL_English_SC'),
-        url('../fonts/IM_Fell_English_SC.eot?#iefix') format('embedded-opentype'),
-        url('../fonts/IM_Fell_English_SC.woff') format('woff'),
-        url('../fonts/IM_Fell_English_SC.svg#IMFellEnglishSC') format('svg'),
-        url('../fonts/IM_Fell_English_SC.ttf') format('truetype');
+        local('Prompt-Regular'),
+        url('../fonts/Prompt-Regular.ttf') format('truetype');
+}
+
+:root {
+    --cp_color: #0F75BD;
+    --cp_color_custom: #0a5286;
+    --white: rgba(255,255,255,0.95);
+}
+
+a {
+    color: var(--cp_color);
+}
+
+a:hover {
+    color: var(--cp_color_custom);
+}
+
+.btn-primary {
+    background-color: var(--cp_color) !important;
+}
+
+.panel-primary>.panel-heading {
+    color: #ffffff;
+    background-color: var(--cp_color);
+    border-color: var(--cp_color);
+}
+
+.panel-primary>.panel-heading a {
+    color: #ffffff !important;
 }
 
 .navbar-brand {
-    font-family: "IM Fell English SC", serif;
+    font-family: "Prompt-Regular", serif;
+    font-weight: 700;
 }
 
 #appearance-main-viewport {
@@ -188,11 +213,11 @@ a i {
 }
 
 .panel-highlighted {
-    box-shadow: 0px 0px 3px #18bc9c, 10px 10px 20px #000000;
+    box-shadow: 0px 0px 3px var(--cp_color), 10px 10px 20px #000000;
 }
 
 .panel-highlighted:hover {
-    box-shadow: 0px 0px 3px #18bc9c, 10px 10px 20px #000000, 0px 0px 8px #000000;
+    box-shadow: 0px 0px 3px var(--cp_color), 10px 10px 20px #000000, 0px 0px 8px #000000;
 }
 
 .panel-item:not(.panel-highlighted):hover  {
@@ -227,8 +252,8 @@ a i {
     border-radius: 50%;
     background-color: transparent;
     border: 2px solid #222;
-    border-top: 2px solid #03A9F4;
-    border-bottom: 2px solid #03A9F4;
+    border-top: 2px solid #f4dc03;
+    border-bottom: 2px solid #f4dc03;
     -webkit-animation: .5s spin linear infinite;
     animation: .5s spin linear infinite;
 }
@@ -331,7 +356,7 @@ a i {
 }
 
 .btn-primary.btn-outline {
-    color: #428bca;
+    color: var(--cp_color);
 }
 
 .btn-success.btn-outline {
@@ -379,14 +404,24 @@ a i {
   border: 0;
 }
 
+/* custom navbar */
+.navbar, .navbar a {
+    background-color: rgba(255,255,255,0.95); /* white color */
+}
+.navbar {
+    color: black;
+}
+.navbar a {
+    color: var(--cp_color) !important;
+}
 
 /* menu_main */
 /* Hide for mobile, show later */
 
 #menu-main {
     display: block;
-    background-color: #2c3e50;
-    border-right: 1px solid #18bc9c;
+    background-color: rgba(255,255,255,0.95); /* white color */
+    border-right: 1px solid var(--cp_color); /* cp color */
     bottom: 0;
     left: -210px;
     overflow-x: hidden;
@@ -402,8 +437,8 @@ a i {
 
 #menu-main-button-close {
     border-radius: 0;
-    border-top: 2px solid #1c2733;
-    border-bottom: 2px solid #1c2733;
+    border-top: 2px solid var(--cp_color); /* cp color */
+    border-bottom: 2px solid var(--cp_color); /* cp color */
     bottom: 0;
     display: block;
     height: 40px;
@@ -480,9 +515,6 @@ a i {
 }
 
 .navbar-brand {
-}
-
-.navbar-brand {
     outline: none;
 }
 
@@ -497,7 +529,9 @@ a i {
 }
 
 #accordion-sidebar a[aria-expanded="true"] {
-    background: #1a242f;
+    background: var(--cp_color); /* cp color */
+    color: var(--white) !important;
+    font-weight: 700;
 }
 
 #accordion-sidebar .panel {
@@ -510,6 +544,7 @@ a i {
 
 #accordion-sidebar > .panel > div > div > ul > li > a,
 #accordion-sidebar > .panel > div > h4 > a {
+    color: var(--cp_color); /* cp color */
     text-decoration: none;
     outline: none;
     position: relative;
@@ -517,23 +552,29 @@ a i {
 }
 
 #accordion-sidebar .panel-heading {
-    background-color: #2c3e50;
-    color: white;
+    background-color: transparent;
+    color: black;
     padding: 0px;
 }
 
 #accordion-sidebar .panel-heading:hover {
-    background-color: #517394;
+    background-color: var(--cp_color_custom); /* cp color custom */
+    color: var(--white); /* white color */
     transition: .1s ease;
 }
 
 #accordion-sidebar > .panel > div > .panel-body > ul > li.active {
-   background: #1a242f;
+   background: transparent;
 }
 
 #accordion-sidebar > .panel > div > .panel-body > ul > li:hover {
-    background-color: #517394;
+    background-color: var(--cp_color_custom); /* cp color custom */
     transition: .1s ease;
+}
+
+#accordion-sidebar a:hover {
+    color: var(--white) !important; /* white color */
+    font-weight: 700;
 }
 
 #accordion-sidebar .panel-title {
@@ -543,7 +584,7 @@ a i {
 #accordion-sidebar .panel-body {
     font-size: 13px;
     border: 0px;
-    background-color: #2c3e50;
+    background-color: transparent;
     padding-top: 3px;
     padding-left: 20px;
     padding-right: 0px;
@@ -559,13 +600,38 @@ a i {
 }
 
 #accordion-sidebar .panel-body a {
-    color: white;
+    color: var(--white);
     text-decoration: none;
     padding: 9px;
 }
 
+.navbar-default .navbar-brand:hover {
+    font-weight: 700;
+}
+
+.navbar-default a:focus, .navbar-default a:hover {
+    font-weight: 700;
+}
+
+.navbar-default .navbar-nav>.open>a {
+    background-color: var(--cp_color) !important; /* cp color */
+    color: var(--white) !important; /* white color */
+    font-weight: 700;
+}
+
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
+    background-color: var(--cp_color_custom); /* cp color custom */
+    color: rgba(255,255,255,0.95) !important; /* white color */
+    transition: .1s ease;
+    font-weight: 700;
+}
+
+.navbar-toggle {
+    background-color: var(--cp_color) !important; /* cp color */
+}
+
 .navbar-fixed-top {
-    box-shadow: 0px 3px 3px rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 2px 2px var(--cp_color_custom); /* cp color custom */
 }
 
 .toolbar {
