@@ -121,6 +121,12 @@ a i {
 
 /* Collapse navigation on medium or smaller */
 @media (max-width: 991px) {
+    .navbar .navbar-brand {
+        padding: 7.5px 7.5px;
+    }
+    .navbar .navbar-brand img {
+        display: inline-block;
+    }
   .navbar-header {
       float: none;
   }
@@ -456,9 +462,11 @@ a i {
         display: block;
     }
 
-    .navbar-brand {
-        text-align: center;
-        width: 210px;
+    .navbar .navbar-brand {
+        padding: 7.5px 7.5px;
+    }
+    .navbar .navbar-brand img {
+        display: inline-block;
     }
 }
 
