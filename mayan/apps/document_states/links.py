@@ -282,6 +282,13 @@ link_workflow_runtime_proxy_preview = Link(
     permissions=(permission_workflow_template_view,),
     text=_('Preview'), view='document_states:workflow_template_preview'
 )
+link_workflow_runtime_proxy_list_custom = Link(
+    condition=factory_condition_queryset_access(
+        app_label='document_states', model_name='WorkflowRuntimeProxy',
+        object_permission=permission_workflow_template_view,
+    ), icon=icon_workflow_runtime_proxy_list,
+    text=_('All'), view='document_states:workflow_runtime_proxy_list'
+)
 
 # Tools
 

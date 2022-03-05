@@ -24,6 +24,12 @@ class Theme(ExtraDataModelMixin, models.Model):
             'user interface elements.'
         ), verbose_name=_('Stylesheet')
     )
+    default = models.BooleanField(
+        default=False,
+        help_text=_(
+            'Set this theme to default theme.'
+        ), verbose_name=_('Default')
+    )
 
     class Meta:
         ordering = ('label',)
@@ -55,6 +61,8 @@ class Theme(ExtraDataModelMixin, models.Model):
         self.stylesheet = bleach.clean(
             text=self.stylesheet, tags=('style',)
         )
+        if self.default:
+            Theme.objects.all().update(default=False)
         super().save(*args, **kwargs)
 
 

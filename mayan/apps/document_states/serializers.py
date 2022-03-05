@@ -118,7 +118,7 @@ class WorkflowTemplateStateSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         fields = (
             'actions_url', 'completion', 'id', 'initial', 'label', 'url',
-            'workflow_template_url'
+            'workflow_template_url', 'start_datetime', 'end_datetime'
         )
         model = WorkflowState
         read_only_fields = ('id', 'url', 'workflow_template_url')

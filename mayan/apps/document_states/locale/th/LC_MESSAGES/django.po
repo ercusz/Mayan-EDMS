@@ -199,7 +199,7 @@ msgstr "แก้ไข"
 
 #: links.py:82
 msgid "Launch workflow"
-msgstr "ปล่อยเวิร์กโฟลว์"
+msgstr "เริ่มต้นการทำงานเวิร์กโฟลว์"
 
 #: links.py:94 links.py:283
 msgid "Preview"
@@ -337,7 +337,7 @@ msgstr ""
 
 #: models/workflow_models.py:42
 msgid "Launch workflow when document is created."
-msgstr ""
+msgstr "เมื่อเปิดใช้งาน เวิร์กโฟลว์จะมีการเริ่มต้นการทำงานให้คุณอัตโนมัติเสมอ โดยที่คุณไม่ต้องใช้งานฟังก์ชันเริ่มต้นการทำงานเวิร์กโฟลว์เลย"
 
 #: models/workflow_models.py:43
 msgid "Auto launch"
@@ -347,7 +347,7 @@ msgstr "เริ่มการทำงานอัตโนมัติ"
 msgid ""
 "This value will be used by other apps to reference this workflow. Can only "
 "contain letters, numbers, and underscores."
-msgstr ""
+msgstr "ค่านี้จะถูกใช้โดยแอปอื่นๆ เพื่ออ้างอิงเวิร์กโฟลว์นี้ โดยสามารถกรอกได้เฉพาะตัวอักษร ตัวเลข และขีดล่าง(_)เท่านั้น"
 
 #: models/workflow_models.py:50 models/workflow_transition_models.py:145
 msgid "Internal name"
@@ -793,7 +793,7 @@ msgstr ""
 #: views/workflow_template_state_views.py:124
 #, python-format
 msgid "Edit workflow state action: %s"
-msgstr ""
+msgstr "แก้ไขการกระทำของสถานะเวิร์กโฟลว์: %s"
 
 #: views/workflow_template_state_views.py:174
 msgid ""
@@ -828,7 +828,7 @@ msgstr ""
 #: views/workflow_template_state_views.py:297
 #, python-format
 msgid "Edit workflow state: %s"
-msgstr ""
+msgstr "แก้ไขสถานะเวิร์กโฟลว์: %s"
 
 #: views/workflow_template_state_views.py:335
 msgid "This workflow doesn't have any states"
@@ -1038,7 +1038,7 @@ msgstr ""
 #: views/workflow_template_views.py:210
 #, python-format
 msgid "Document types assigned the workflow: %s"
-msgstr "ประเภทเอกสารที่ได้รับมอบหมายในเวิร์กโฟลว์"
+msgstr "ประเภทเอกสารที่ได้รับมอบหมายในเวิร์กโฟลว์: %s"
 
 #: views/workflow_template_views.py:222
 msgid "Launch workflow?"
@@ -1168,3 +1168,27 @@ msgstr ""
 #, python-format
 msgid "%(field_name)s JSON error: %(exception)s"
 msgstr ""
+
+#: models/workflow_models.py:65 models/workflow_state_models.py:74
+msgid "Start Date Time"
+msgstr "วันเวลาที่เริ่ม"
+
+#: models/workflow_models.py:71 models/workflow_state_models.py:80
+msgid "End Date Time"
+msgstr "วันเวลาที่จบ"
+
+#: models/workflow_models.py:64
+msgid "Date and time for this workflow is activated."
+msgstr "วันเวลาที่เวิร์กโฟลว์นี้เริ่มต้นการทำงาน"
+
+#: models/workflow_models.py:70
+msgid "Date and time for this workflow is deactivated."
+msgstr "วันเวลาที่เวิร์กโฟลว์นี้หยุดการทำงาน"
+
+#: models/workflow_state_models.py:73
+msgid "Date and time for this state is activated."
+msgstr "วันเวลาที่สถานะนี้เริ่มต้นการทำงาน"
+
+#: models/workflow_state_models.py:76
+msgid "Date and time for this state is deactivated."
+msgstr "วันเวลาที่สถานะนี้หยุดการทำงาน"

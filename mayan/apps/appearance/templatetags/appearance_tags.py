@@ -7,7 +7,7 @@ from django.template.loader import get_template
 from django.utils.module_loading import import_string
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
-
+from ..models import Theme 
 from ..literals import COMMENT_APP_TEMPLATE_CACHE_DISABLE
 
 app_templates_cache = {}

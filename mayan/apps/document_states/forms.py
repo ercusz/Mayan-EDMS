@@ -1,9 +1,11 @@
 import json
-
+from datetime import datetime
+from django.utils.timezone import make_aware
 from django import forms
 from django.db.models import Model
 from django.db.models.query import QuerySet
 from django.forms.formsets import formset_factory
+from django.forms import TextInput, MultiWidget, DateTimeField
 from django.utils.module_loading import import_string
 from django.utils.translation import ugettext_lazy as _
 
@@ -17,6 +19,43 @@ from .models import (
     WorkflowTransition
 )
 
+class MinimalSplitDateTimeMultiWidget(MultiWidget):
+
+    def __init__(self, widgets=None, attrs=None):
+        if widgets is None:
+            if attrs is None:
+                attrs = {}
+            date_attrs = attrs.copy()
+            time_attrs = attrs.copy()
+
+            date_attrs['type'] = 'date'
+            time_attrs['type'] = 'time'
+
+            widgets = [
+                TextInput(attrs=date_attrs),
+                TextInput(attrs=time_attrs),
+            ]
+        super().__init__(widgets, attrs)
+
+    # nabbing from https://docs.djangoproject.com/en/3.1/ref/forms/widgets/#django.forms.MultiWidget.decompress
+    def decompress(self, value):
+        if value:
+            return [value.date(), value.strftime('%H:%M')]
+        return [None, None]
+
+    def value_from_datadict(self, data, files, name):
+        date_str, time_str = super().value_from_datadict(data, files, name)
+        # DateField expects a single string that it can parse into a date.
+
+        if date_str == time_str == '':
+            return None
+
+        if time_str == '':
+            time_str = '00:00'
+
+        my_datetime = datetime.strptime(date_str + ' ' + time_str, "%Y-%m-%d %H:%M")
+        # making timezone aware
+        return make_aware(my_datetime)
 
 class WorkflowActionSelectionForm(forms.Form):
     klass = forms.ChoiceField(
@@ -31,8 +70,12 @@ class WorkflowActionSelectionForm(forms.Form):
 
 class WorkflowForm(forms.ModelForm):
     class Meta:
-        fields = ('label', 'internal_name', 'auto_launch')
+        fields = ('label', 'internal_name', 'auto_launch', 'start_datetime', 'end_datetime')
         model = Workflow
+        widgets = {
+            'start_datetime': MinimalSplitDateTimeMultiWidget(),
+            'end_datetime': MinimalSplitDateTimeMultiWidget(),
+        }
 
 
 class WorkflowMultipleSelectionForm(FilteredSelectionForm):
@@ -92,11 +135,14 @@ class WorkflowStateActionDynamicForm(DynamicModelForm):
 
         return data
 
-
 class WorkflowStateForm(forms.ModelForm):
     class Meta:
-        fields = ('initial', 'label', 'completion')
+        fields = ('initial', 'label', 'start_datetime', 'end_datetime')
         model = WorkflowState
+        widgets = {
+            'start_datetime': MinimalSplitDateTimeMultiWidget(),
+            'end_datetime': MinimalSplitDateTimeMultiWidget(),
+        }
 
 
 class WorkflowTransitionForm(forms.ModelForm):

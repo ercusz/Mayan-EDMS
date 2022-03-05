@@ -10,7 +10,7 @@
 :root {
     --cp_color: #0F75BD;
     --cp_color_custom: #0a5286;
-    --white: rgba(255,255,255,0.95);
+    --cp_white: rgba(255,255,255,0.95);
 }
 
 a {
@@ -26,13 +26,13 @@ a:hover {
 }
 
 .panel-primary>.panel-heading {
-    color: #ffffff;
+    color: var(--cp_white);
     background-color: var(--cp_color);
     border-color: var(--cp_color);
 }
 
 .panel-primary>.panel-heading a {
-    color: #ffffff !important;
+    color: var(--cp_white) !important;
 }
 
 .navbar-brand {
@@ -244,16 +244,17 @@ a i {
 
 #ajax-spinner {
     position: fixed;
-    top: 16px;
-    left: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70px;
+    height: 70px;
     z-index: 9999;
-    width: 25px;
-    height: 25px;
     border-radius: 50%;
     background-color: transparent;
-    border: 2px solid #222;
-    border-top: 2px solid #f4dc03;
-    border-bottom: 2px solid #f4dc03;
+    border: 4px solid #222;
+    border-top: 2px solid var(--cp_color);
+    border-bottom: 2px solid var(--cp_color);
     -webkit-animation: .5s spin linear infinite;
     animation: .5s spin linear infinite;
 }
@@ -381,7 +382,7 @@ a i {
 .btn-info.btn-outline:hover,
 .btn-warning.btn-outline:hover,
 .btn-danger.btn-outline:hover {
-    color: #fff;
+    color: var(--cp_white);
 }
 
 .btn-list > .btn {
@@ -406,7 +407,7 @@ a i {
 
 /* custom navbar */
 .navbar, .navbar a {
-    background-color: rgba(255,255,255,0.95); /* white color */
+    background-color: var(--cp_white); /* white color */
 }
 .navbar {
     color: black;
@@ -420,7 +421,7 @@ a i {
 
 #menu-main {
     display: block;
-    background-color: rgba(255,255,255,0.95); /* white color */
+    background-color: var(--cp_white); /* white color */
     border-right: 1px solid var(--cp_color); /* cp color */
     bottom: 0;
     left: -210px;
@@ -457,7 +458,7 @@ a i {
 }
 
 .menu-user-name {
-    color: white;
+    color: var(--cp_white);
 }
 
 #multi-item-title-responsible-wrapper {
@@ -530,7 +531,7 @@ a i {
 
 #accordion-sidebar a[aria-expanded="true"] {
     background: var(--cp_color); /* cp color */
-    color: var(--white) !important;
+    color: var(--cp_white) !important;
     font-weight: 700;
 }
 
@@ -559,7 +560,7 @@ a i {
 
 #accordion-sidebar .panel-heading:hover {
     background-color: var(--cp_color_custom); /* cp color custom */
-    color: var(--white); /* white color */
+    color: var(--cp_white); /* white color */
     transition: .1s ease;
 }
 
@@ -573,7 +574,7 @@ a i {
 }
 
 #accordion-sidebar a:hover {
-    color: var(--white) !important; /* white color */
+    color: var(--cp_white) !important; /* white color */
     font-weight: 700;
 }
 
@@ -600,7 +601,7 @@ a i {
 }
 
 #accordion-sidebar .panel-body a {
-    color: var(--white);
+    color: var(--cp_white);
     text-decoration: none;
     padding: 9px;
 }
@@ -615,13 +616,13 @@ a i {
 
 .navbar-default .navbar-nav>.open>a {
     background-color: var(--cp_color) !important; /* cp color */
-    color: var(--white) !important; /* white color */
+    color: var(--cp_white) !important; /* white color */
     font-weight: 700;
 }
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
     background-color: var(--cp_color_custom); /* cp color custom */
-    color: rgba(255,255,255,0.95) !important; /* white color */
+    color: var(--cp_white) !important; /* white color */
     transition: .1s ease;
     font-weight: 700;
 }

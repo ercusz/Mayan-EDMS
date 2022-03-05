@@ -50,9 +50,9 @@ class WorkflowState(ExtraDataModelMixin, models.Model):
         on_delete=models.CASCADE, related_name='states', to=Workflow,
         verbose_name=_('Workflow')
     )
-    label = models.CharField(
+    label = models.TextField(
         help_text=_('A short text to describe the workflow state.'),
-        max_length=255, verbose_name=_('Label')
+        verbose_name=_('Label')
     )
     initial = models.BooleanField(
         default=False,
@@ -66,6 +66,18 @@ class WorkflowState(ExtraDataModelMixin, models.Model):
             'The percent of completion that this state represents in '
             'relation to the workflow. Use numbers without the percent sign.'
         ), verbose_name=_('Completion')
+    )
+    start_datetime = models.DateTimeField(
+        blank=True, null=True,
+        help_text=_(
+            'Date and time for this state is activated.' 
+        ), verbose_name=_('Start Date Time')
+    )
+    end_datetime = models.DateTimeField(
+        blank=True, null=True, 
+        help_text=_(
+            'Date and time for this state is deactivated.'
+        ), verbose_name=_('End Date Time')
     )
 
     class Meta:

@@ -36,6 +36,7 @@ from .links import (
     link_workflow_instance_detail, link_workflow_instance_transition,
     link_workflow_runtime_proxy_document_list,
     link_workflow_runtime_proxy_list, link_workflow_template_preview,
+    link_workflow_runtime_proxy_list_custom,
     link_workflow_runtime_proxy_state_document_list,
     link_workflow_runtime_proxy_state_list,
     link_document_type_workflow_templates, link_workflow_template_create,
@@ -65,7 +66,7 @@ from .permissions import (
     permission_workflow_tools, permission_workflow_instance_transition,
     permission_workflow_template_view
 )
-
+from .menus import menu_workflows
 
 class DocumentStatesApp(MayanAppConfig):
     app_namespace = 'document_states'
@@ -122,7 +123,7 @@ class DocumentStatesApp(MayanAppConfig):
 
         ModelCopy(model=WorkflowState).add_fields(
             field_names=(
-                'actions', 'workflow', 'label', 'initial', 'completion'
+                'actions', 'workflow', 'label', 'initial', 'completion', 'start_datetime', 'end_datetime'
             )
         )
         ModelCopy(model=WorkflowStateAction).add_fields(
@@ -263,6 +264,14 @@ class DocumentStatesApp(MayanAppConfig):
             attribute='label', is_identifier=True, is_sortable=True,
             source=Workflow
         )
+        SourceColumn(
+            attribute='start_datetime', include_label=True, is_sortable=True,
+            source=Workflow
+        )
+        SourceColumn(
+            attribute='end_datetime', include_label=True, is_sortable=True,
+            source=Workflow
+        )
         column_workflow_internal_name = SourceColumn(
             attribute='internal_name', include_label=True, is_sortable=True,
             source=Workflow
@@ -341,6 +350,14 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='completion', include_label=True, is_sortable=True,
+            source=WorkflowState
+        )
+        SourceColumn(
+            attribute='start_datetime', include_label=True, is_sortable=True,
+            source=WorkflowState
+        )
+        SourceColumn(
+            attribute='end_datetime', include_label=True, is_sortable=True,
             source=WorkflowState
         )
 
@@ -462,9 +479,15 @@ class DocumentStatesApp(MayanAppConfig):
             ), sources=(DocumentType,)
         )
 
-        menu_main.bind_links(
-            links=(link_workflow_runtime_proxy_list,), position=20
+        menu_workflows.bind_links(
+            links=(
+                link_workflow_runtime_proxy_list_custom,
+                link_workflow_template_create,
+            )
         )
+
+        menu_main.bind_links(links=(menu_workflows,), position=20)
+
         menu_multi_item.bind_links(
             links=(link_document_multiple_workflow_templates_launch,),
             sources=(Document,)
@@ -482,11 +505,11 @@ class DocumentStatesApp(MayanAppConfig):
             ), sources=(Workflow,)
         )
         menu_object.bind_links(
-            exclude=(WorkflowStateRuntimeProxy,),
             links=(
                 link_workflow_template_state_edit,
-                link_workflow_template_state_delete
-            ), sources=(WorkflowState,)
+                link_workflow_template_state_delete,
+                link_workflow_runtime_proxy_state_document_list,
+            ), sources=(WorkflowState, WorkflowStateRuntimeProxy)
         )
         menu_object.bind_links(
             links=(
@@ -528,7 +551,7 @@ class DocumentStatesApp(MayanAppConfig):
         )
         menu_list_facet.bind_links(
             links=(
-                link_workflow_runtime_proxy_state_document_list,
+                # link_workflow_runtime_proxy_state_document_list,
             ), sources=(WorkflowStateRuntimeProxy,)
         )
         menu_list_facet.bind_links(

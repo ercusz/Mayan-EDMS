@@ -20,7 +20,7 @@ msgstr ""
 
 #: apps.py:137 permissions.py:5 settings.py:15
 msgid "Common"
-msgstr ""
+msgstr "ทั่วไป"
 
 #: classes.py:409
 msgid "Model properties"
@@ -56,11 +56,11 @@ msgstr ""
 
 #: links.py:29
 msgid "About this"
-msgstr ""
+msgstr "เกี่ยวกับ"
 
 #: links.py:32
 msgid "Get the book"
-msgstr ""
+msgstr "รับหนังสือ"
 
 #: links.py:37
 msgid "Documentation"
@@ -68,35 +68,35 @@ msgstr ""
 
 #: links.py:40
 msgid "Forum"
-msgstr ""
+msgstr "ฟอรัม"
 
 #: links.py:44 views.py:48
 msgid "License"
-msgstr ""
+msgstr "ใบอนุญาต"
 
 #: links.py:49
 msgid "Copy"
-msgstr ""
+msgstr "คัดลอก"
 
 #: links.py:52
 msgid "Setup"
-msgstr ""
+msgstr "การตั้งค่า"
 
 #: links.py:55
 msgid "Source code"
-msgstr ""
+msgstr "ซอร์สโค้ด"
 
 #: links.py:59
 msgid "Online store"
-msgstr ""
+msgstr "ร้านค้าออนไลน์"
 
 #: links.py:63
 msgid "Get support"
-msgstr ""
+msgstr "รับการช่วยเหลือ"
 
 #: links.py:67 queues.py:6 views.py:122
 msgid "Tools"
-msgstr ""
+msgstr "เครื่องมือ"
 
 #: literals.py:20
 msgid ""
@@ -111,19 +111,19 @@ msgstr ""
 
 #: literals.py:32
 msgid "Days"
-msgstr ""
+msgstr "วัน"
 
 #: literals.py:33
 msgid "Hours"
-msgstr ""
+msgstr "ชั่วโมง"
 
 #: literals.py:34
 msgid "Minutes"
-msgstr ""
+msgstr "นาที"
 
 #: menus.py:8
 msgid "System"
-msgstr ""
+msgstr "ระบบ"
 
 #: menus.py:10 menus.py:11
 msgid "Facet"
@@ -131,11 +131,11 @@ msgstr ""
 
 #: menus.py:14
 msgid "Actions"
-msgstr ""
+msgstr "การกระทำ"
 
 #: menus.py:15
 msgid "Related"
-msgstr ""
+msgstr "ที่เกี่ยวข้อง"
 
 #: menus.py:16
 msgid "Secondary"
@@ -143,15 +143,15 @@ msgstr ""
 
 #: menus.py:18
 msgid "Return"
-msgstr ""
+msgstr "กลับ"
 
 #: menus.py:22
 msgid "User"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #: permissions.py:8
 msgid "Copy object"
-msgstr ""
+msgstr "คัดลอก object"
 
 #: settings.py:22
 msgid ""
@@ -232,11 +232,11 @@ msgstr ""
 
 #: views.py:22
 msgid "About"
-msgstr ""
+msgstr "เกี่ยวกับ"
 
 #: views.py:39
 msgid "Home"
-msgstr ""
+msgstr "หน้าหลัก"
 
 #: views.py:62
 #, python-format

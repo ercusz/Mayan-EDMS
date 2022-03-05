@@ -58,6 +58,18 @@ class Workflow(ExtraDataModelMixin, models.Model):
             'Document types'
         )
     )
+    start_datetime = models.DateTimeField(
+        blank=True, null=True,
+        help_text=_(
+            'Date and time for this workflow is activated.' 
+        ), verbose_name=_('Start Date Time')
+    )
+    end_datetime = models.DateTimeField(
+        blank=True, null=True, 
+        help_text=_(
+            'Date and time for this workflow is deactivated.'
+        ), verbose_name=_('End Date Time')
+    )
 
     objects = WorkflowManager()
 
@@ -206,10 +218,9 @@ class Workflow(ExtraDataModelMixin, models.Model):
     def render(self):
         diagram = Digraph(
             name='finite_state_machine', graph_attr={
-                'rankdir': 'LR', 
-                'splines': 'polyline',
+                'rankdir': 'TB', 
                 'fontname': 'TH Niramit AS',
-            }, format='png',
+            }, format='webp',
         )
 
         action_cache = {}
@@ -261,7 +272,7 @@ class Workflow(ExtraDataModelMixin, models.Model):
             kwargs = {
                 'name': value['name'],
                 'label': value['label'],
-                'shape': 'doublecircle' if value['connections']['origin'] == 0 or value['connections']['destination'] == 0 or value['initial'] else 'circle',
+                'shape': 'box' if value['connections']['origin'] == 0 or value['connections']['destination'] == 0 or value['initial'] else 'box',
                 'style': 'filled' if value['initial'] else '',
                 'fillcolor': '#9DD390',
                 

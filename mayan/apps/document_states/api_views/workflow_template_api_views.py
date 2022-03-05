@@ -143,7 +143,7 @@ class APIWorkflowTemplateStateListView(generics.ListCreateAPIView):
     get: Returns a list of all the workflow template states.
     post: Create a new workflow template state.
     """
-    ordering_fields = ('completion', 'id', 'initial', 'label')
+    ordering_fields = ('start_datetime', 'end_datetime', 'completion', 'id', 'initial', 'label')
     serializer_class = WorkflowTemplateStateSerializer
 
     def get_instance_extra_data(self):
