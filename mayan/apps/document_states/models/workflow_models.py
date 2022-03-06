@@ -220,7 +220,7 @@ class Workflow(ExtraDataModelMixin, models.Model):
             name='finite_state_machine', graph_attr={
                 'rankdir': 'TB', 
                 'fontname': 'TH Niramit AS',
-            }, format='webp',
+            }, format='png',
         )
 
         action_cache = {}
