@@ -1192,3 +1192,8 @@ msgstr "วันเวลาที่สถานะนี้เริ่มต
 #: models/workflow_state_models.py:76
 msgid "Date and time for this state is deactivated."
 msgstr "วันเวลาที่สถานะนี้หยุดการทำงาน"
+
+#: models/workflow_models.py:84
+#: models/workflow_state_models.py:92
+msgid "The start datetime should not be greater than the end datetime."
+msgstr "วันเวลาที่เริ่มไม่ควรมากกว่าวันเวลาที่จบ"

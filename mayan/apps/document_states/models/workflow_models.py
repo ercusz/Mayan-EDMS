@@ -10,7 +10,7 @@ from django.db import IntegrityError, models
 from django.urls import reverse
 from django.utils.functional import cached_property
 from django.utils.translation import ugettext_lazy as _
-
+from django.core.exceptions import ValidationError
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.common.validators import validate_internal_name
@@ -77,6 +77,11 @@ class Workflow(ExtraDataModelMixin, models.Model):
         ordering = ('label',)
         verbose_name = _('Workflow')
         verbose_name_plural = _('Workflows')
+
+    def clean(self):
+        super().clean()
+        if not (self.start_datetime <= self.end_datetime):
+            raise ValidationError(_('The start datetime should not be greater than the end datetime.'))
 
     def __str__(self):
         return self.label

@@ -9,7 +9,7 @@ from django.db import models
 from django.db.models import F, Max, Q
 from django.utils.module_loading import import_string
 from django.utils.translation import ugettext_lazy as _
-
+from django.core.exceptions import ValidationError
 from mayan.apps.acls.models import AccessControlList
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.documents.models import Document
@@ -85,6 +85,11 @@ class WorkflowState(ExtraDataModelMixin, models.Model):
         unique_together = ('workflow', 'label')
         verbose_name = _('Workflow state')
         verbose_name_plural = _('Workflow states')
+
+    def clean(self):
+        super().clean()
+        if not (self.start_datetime <= self.end_datetime):
+            raise ValidationError(_('The start datetime should not be greater than the end datetime.'))
 
     def __str__(self):
         return self.label
