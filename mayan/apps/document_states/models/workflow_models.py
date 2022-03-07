@@ -80,8 +80,9 @@ class Workflow(ExtraDataModelMixin, models.Model):
 
     def clean(self):
         super().clean()
-        if not (self.start_datetime <= self.end_datetime):
-            raise ValidationError(_('The start datetime should not be greater than the end datetime.'))
+        if self.start_datetime and self.end_datetime is not None:
+            if not (self.start_datetime <= self.end_datetime):
+                raise ValidationError(_('The start datetime should not be greater than the end datetime.'))
 
     def __str__(self):
         return self.label
