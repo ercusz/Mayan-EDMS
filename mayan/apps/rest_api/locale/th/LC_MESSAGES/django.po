@@ -37,7 +37,7 @@ msgstr ""
 
 #: relations.py:82
 msgid "This field is required."
-msgstr ""
+msgstr "ฟิลด์นี้จำเป็นต้องกรอก"
 
 #: relations.py:83
 #, python-brace-format

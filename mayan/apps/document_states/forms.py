@@ -69,6 +69,9 @@ class WorkflowActionSelectionForm(forms.Form):
 
 
 class WorkflowForm(forms.ModelForm):
+
+    use_required_attribute = False
+
     class Meta:
         fields = ('label', 'internal_name', 'auto_launch', 'start_datetime', 'end_datetime')
         model = Workflow
@@ -76,6 +79,13 @@ class WorkflowForm(forms.ModelForm):
             'start_datetime': MinimalSplitDateTimeMultiWidget(),
             'end_datetime': MinimalSplitDateTimeMultiWidget(),
         }
+
+    def __init__(self, *args, **kwargs):
+        super(WorkflowForm, self).__init__(*args, **kwargs)
+
+        for field in self.fields.values():
+            field.error_messages = {'required': _('The field "%(field_name)s" is required.') % { 
+                'field_name': field.label }}
 
 
 class WorkflowMultipleSelectionForm(FilteredSelectionForm):
@@ -136,6 +146,9 @@ class WorkflowStateActionDynamicForm(DynamicModelForm):
         return data
 
 class WorkflowStateForm(forms.ModelForm):
+
+    use_required_attribute = False
+
     class Meta:
         fields = ('initial', 'label', 'start_datetime', 'end_datetime')
         model = WorkflowState
@@ -143,6 +156,14 @@ class WorkflowStateForm(forms.ModelForm):
             'start_datetime': MinimalSplitDateTimeMultiWidget(),
             'end_datetime': MinimalSplitDateTimeMultiWidget(),
         }
+    
+    def __init__(self, *args, **kwargs):
+        super(WorkflowStateForm, self).__init__(*args, **kwargs)
+
+        for field in self.fields.values():
+            field.error_messages = {'required': _('The field "%(field_name)s" is required.') % { 
+                'field_name': field.label }}
+
 
 
 class WorkflowTransitionForm(forms.ModelForm):

@@ -1199,3 +1199,8 @@ msgstr "วันเวลาที่สถานะนี้หยุดกา
 #: models/workflow_state_models.py:93
 msgid "The start datetime should not be greater than the end datetime."
 msgstr "วันเวลาที่เริ่มไม่ควรมากกว่าวันเวลาที่จบ"
+
+#: forms.py:87
+#: forms.py:164
+msgid "The field \"%(field_name)s\" is required."
+msgstr "คุณจำเป็นต้องกรอกข้อมูลในฟิลด์ \"%(field_name)s\""
