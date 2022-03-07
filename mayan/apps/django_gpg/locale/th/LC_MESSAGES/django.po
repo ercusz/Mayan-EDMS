@@ -68,7 +68,7 @@ msgstr ""
 
 #: forms.py:26
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: forms.py:29 models.py:48
 msgid "Fingerprint"

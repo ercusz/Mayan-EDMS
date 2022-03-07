@@ -266,10 +266,12 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='start_datetime', include_label=True, is_sortable=True,
+            empty_value=_('None'),
             source=Workflow
         )
         SourceColumn(
             attribute='end_datetime', include_label=True, is_sortable=True,
+            empty_value=_('None'),
             source=Workflow
         )
         column_workflow_internal_name = SourceColumn(
@@ -354,10 +356,12 @@ class DocumentStatesApp(MayanAppConfig):
         )
         SourceColumn(
             attribute='start_datetime', include_label=True, is_sortable=True,
+            empty_value=_('None'),
             source=WorkflowState
         )
         SourceColumn(
             attribute='end_datetime', include_label=True, is_sortable=True,
+            empty_value=_('None'),
             source=WorkflowState
         )
 

@@ -102,7 +102,7 @@ msgstr ""
 
 #: classes.py:419
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: classes.py:428
 msgid "Not specified"

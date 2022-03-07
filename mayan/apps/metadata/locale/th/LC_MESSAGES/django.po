@@ -116,7 +116,7 @@ msgstr ""
 
 #: forms.py:197
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: forms.py:198
 msgid "Optional"

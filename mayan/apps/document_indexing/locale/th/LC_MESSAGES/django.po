@@ -20,7 +20,7 @@ msgstr ""
 
 #: admin.py:22
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: admin.py:24 links.py:95 models.py:54
 msgid "Document types"

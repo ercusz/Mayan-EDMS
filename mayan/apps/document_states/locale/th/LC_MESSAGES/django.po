@@ -27,11 +27,11 @@ msgstr "เวิร์กโฟลว์"
 
 #: apps.py:179 apps.py:186
 msgid "Current state of a workflow"
-msgstr ""
+msgstr "สถานะปัจจุบันของเวิร์กโฟลว์"
 
 #: apps.py:180
 msgid "Return the current state of the selected workflow."
-msgstr ""
+msgstr "รีเทิร์นสถานะปัจจุบันของเวิร์กโฟลว์ที่เลือก"
 
 #: apps.py:187
 msgid ""
@@ -66,9 +66,11 @@ msgstr ""
 msgid "Get last transition"
 msgstr ""
 
-#: apps.py:272 apps.py:284 apps.py:293 apps.py:299
+#: apps.py:269 apps.py:274 apps.py:283
+#: apps.py:295 apps.py:304 apps.py:310
+#: apps.py:359 apps.py:363 apps.py:364
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: apps.py:280
 msgid "Current state"
@@ -76,7 +78,7 @@ msgstr "State ปัจจุบัน"
 
 #: apps.py:285 apps.py:309 models/workflow_instance_models.py:186
 msgid "User"
-msgstr ""
+msgstr "ผู้ใช้"
 
 #: apps.py:289
 msgid "Last transition"
@@ -88,19 +90,19 @@ msgstr "วันที่และเวลา"
 
 #: apps.py:300 models/workflow_state_models.py:68
 msgid "Completion"
-msgstr ""
+msgstr "ความสำเร็จ"
 
 #: apps.py:330
 msgid "Additional details"
-msgstr ""
+msgstr "รายละเอียดเพิ่มเติม"
 
 #: apps.py:357
 msgid "When?"
-msgstr ""
+msgstr "เมื่อไหร่?"
 
 #: apps.py:361
 msgid "Action type"
-msgstr ""
+msgstr "ประเภทการกระทำ"
 
 #: apps.py:392
 msgid ""
@@ -168,7 +170,7 @@ msgstr "ใช่"
 
 #: forms.py:190
 msgid "Select a transition to execute in the next step."
-msgstr ""
+msgstr "เลือก transition ที่ต้องการดำเนินการในขั้นตอนถัดไป"
 
 #: forms.py:191 links.py:246 models/workflow_instance_models.py:182
 #: models/workflow_transition_models.py:136
@@ -223,7 +225,7 @@ msgstr "สถานะ"
 
 #: links.py:159
 msgid "Create transition"
-msgstr ""
+msgstr "สร้าง transition"
 
 #: links.py:179
 msgid "Transition triggers"
@@ -401,7 +403,7 @@ msgstr "สถานะทั้งหมดในเวิร์กโฟลว
 
 #: models/workflow_state_models.py:171
 msgid "A short text describing the action."
-msgstr ""
+msgstr "ข้อความสั้นที่ใช้อธิบายการกระทำ"
 
 #: models/workflow_state_models.py:178
 msgid "At which moment of the state this action will execute."
@@ -434,7 +436,7 @@ msgstr ""
 
 #: models/workflow_state_models.py:197 models/workflow_transition_models.py:58
 msgid "Condition"
-msgstr ""
+msgstr "เงื่อนไข"
 
 #: models/workflow_state_models.py:203
 msgid "Workflow state action"
@@ -517,7 +519,7 @@ msgstr ""
 
 #: models/workflow_transition_models.py:155
 msgid "Help text"
-msgstr ""
+msgstr "ข้อความช่วยเหลือ"
 
 #: models/workflow_transition_models.py:159
 msgid "Whether this fields needs to be filled out or not to proceed."
@@ -525,7 +527,7 @@ msgstr ""
 
 #: models/workflow_transition_models.py:160
 msgid "Required"
-msgstr ""
+msgstr "จำเป็น"
 
 #: models/workflow_transition_models.py:164
 msgid "An optional class to change the default presentation of the field."
@@ -597,15 +599,15 @@ msgstr ""
 
 #: queues.py:13
 msgid "Launch a workflow for a document"
-msgstr ""
+msgstr "เริ่มการทำงานเวิร์กโฟลว์สำหรับเอกสาร"
 
 #: queues.py:17
 msgid "Launch all workflows for a document"
-msgstr ""
+msgstr "เริ่มการทำงานเวิร์กโฟลว์ทั้งหมดสำหรับเอกสาร"
 
 #: queues.py:22
 msgid "Launch all workflows for all documents"
-msgstr ""
+msgstr "เริ่มการทำงานเวิร์กโฟลว์ทั้งหมดสำหรับเอกสารทั้งหมด"
 
 #: queues.py:26
 msgid "Launch a workflow"

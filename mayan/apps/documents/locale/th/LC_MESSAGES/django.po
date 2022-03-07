@@ -1587,7 +1587,7 @@ msgstr ""
 
 #: views/document_version_page_views.py:205
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: views/document_version_page_views.py:230
 msgid "There are no sources available to remap for this document version."

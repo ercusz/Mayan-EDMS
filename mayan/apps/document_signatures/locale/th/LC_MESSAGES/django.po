@@ -32,7 +32,7 @@ msgstr ""
 
 #: apps.py:120 forms.py:72
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: apps.py:121 forms.py:60 models.py:61
 msgid "Signature ID"

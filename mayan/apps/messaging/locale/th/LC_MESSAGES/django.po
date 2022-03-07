@@ -24,7 +24,7 @@ msgstr ""
 
 #: apps.py:61
 msgid "None"
-msgstr ""
+msgstr "ไม่มี"
 
 #: apps.py:67
 msgid "Sender"
