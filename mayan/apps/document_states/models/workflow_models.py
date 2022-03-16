@@ -7,7 +7,7 @@ from django.contrib.contenttypes.models import ContentType
 from mayan.apps.acls.models import AccessControlList
 from django.dispatch import receiver
 from django.db.models.signals import post_save
-from mayan.apps.permissions.models import Role
+from mayan.apps.permissions.models import Role, StoredPermission
 from django.contrib.auth import get_user_model
 from django.apps import apps
 from django.core import serializers
@@ -334,12 +334,28 @@ class Workflow(ExtraDataModelMixin, models.Model):
 @receiver(post_save, sender=Workflow)
 def make_acls(sender, instance, created, **kwargs):
     if created:
-        AccessControlList.objects.create(
+        acls = AccessControlList.objects.create(
             content_type=ContentType.objects
                 .get(app_label='document_states', model='workflow'),
             content_object=instance,
             role=Role.objects.get(label=instance.created_by.username)
         )
+
+        perms = [
+            "workflow_create",
+            "workflow_delte",
+            "workflow_edit",
+            "workflow_view",
+            "workflow_transition",
+            "workflow_tools"
+        ]
+
+        for perm in perms:
+            stored_permission = StoredPermission.objects.get(
+                        namespace="document_states",
+                        name=perm,
+                    )
+            acls.permissions.add(stored_permission)
 
 class WorkflowRuntimeProxy(Workflow):
     class Meta:

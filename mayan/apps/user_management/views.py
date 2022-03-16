@@ -1,4 +1,6 @@
 from django.contrib.auth.models import Group
+from mayan.apps.permissions.models import Role
+from django.contrib.auth import get_user_model
 from django.http import HttpResponseRedirect
 from django.template import RequestContext
 from django.urls import reverse, reverse_lazy
@@ -168,6 +170,19 @@ class UserCreateView(SingleObjectCreateView):
 
     def form_valid(self, form):
         super().form_valid(form=form)
+
+        role, created = Role.objects.get_or_create(
+            label=self.object.username,
+        )
+
+        new_group, created = Group.objects.get_or_create(
+            name=self.object.username
+        )
+
+        role.groups.add(new_group)
+
+        self.object.groups.add(new_group)
+
         return HttpResponseRedirect(
             reverse(
                 viewname='authentication:user_set_password', kwargs={
