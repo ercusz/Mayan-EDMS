@@ -54,7 +54,7 @@ DEFAULT_DOCUMENTS_VERSION_PAGE_IMAGE_CACHE_STORAGE_BACKEND_ARGUMENTS = {
 DEFAULT_DOCUMENTS_ZOOM_MAX_LEVEL = 300
 DEFAULT_DOCUMENTS_ZOOM_MIN_LEVEL = 25
 DEFAULT_DOCUMENTS_ZOOM_PERCENT_STEP = 25
-DEFAULT_LANGUAGE = 'eng'
+DEFAULT_LANGUAGE = 'tha'
 DEFAULT_LANGUAGE_CODES = (
     'ilo', 'run', 'uig', 'hin', 'pan', 'pnb', 'wuu', 'msa', 'kxd', 'ind',
     'zsm', 'jax', 'meo', 'kvr', 'xmm', 'min', 'mui', 'zmi', 'max', 'mfa',

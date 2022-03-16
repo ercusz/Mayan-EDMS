@@ -3,7 +3,11 @@ import logging
 
 from furl import furl
 from graphviz import Digraph
-
+from django.contrib.contenttypes.models import ContentType
+from mayan.apps.acls.models import AccessControlList
+from django.dispatch import receiver
+from django.db.models.signals import post_save
+from mayan.apps.permissions.models import Role
 from django.apps import apps
 from django.core import serializers
 from django.db import IntegrityError, models
@@ -323,6 +327,17 @@ class Workflow(ExtraDataModelMixin, models.Model):
     def save(self, *args, **kwargs):
         return super().save(*args, **kwargs)
 
+# after X workflow created 
+# create a new acls and set object = X workflow
+@receiver(post_save, sender=Workflow)
+def make_acls(sender, instance, created, **kwargs):
+    if created:
+        AccessControlList.objects.create(
+            content_type=ContentType.objects
+                .get(app_label='document_states', model='workflow'),
+            content_object=instance,
+            role=Role.objects.get(label='chip')
+        )
 
 class WorkflowRuntimeProxy(Workflow):
     class Meta:

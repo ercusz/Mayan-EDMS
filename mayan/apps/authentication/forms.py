@@ -30,6 +30,8 @@ class EmailAuthenticationForm(forms.Form):
         'inactive': _('This account is inactive.'),
     }
 
+    use_required_attribute = False
+
     def __init__(self, request=None, *args, **kwargs):
         """
         The 'request' parameter is set for custom auth use by subclasses.
@@ -102,4 +104,18 @@ class UserImpersonationSelectionForm(
 
 
 class UsernameAuthenticationForm(AuthenticationForm):
+    use_required_attribute = False
     remember_me = forms.BooleanField(label=_('Remember me'), required=False)
+
+    def __init__(self, request=None, *args, **kwargs):
+        """
+        The 'request' parameter is set for custom auth use by subclasses.
+        The form data comes in via the standard 'data' kwarg.
+        """
+        self.request = request
+        self.user_cache = None
+        super().__init__(*args, **kwargs)
+
+        for field in self.fields.values():
+                field.error_messages = {'required': _('The field "%(field_name)s" is required.') % { 
+                    'field_name': field.label }}

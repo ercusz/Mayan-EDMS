@@ -212,3 +212,7 @@ msgstr ""
 #, python-format
 msgid "Impersonate user: %s"
 msgstr ""
+
+#: forms.py:120
+msgid "The field "%(field_name)s" is required."
+msgstr "คุณจำเป็นต้องกรอกข้อมูลในฟิลด์ \"%(field_name)s\" 
