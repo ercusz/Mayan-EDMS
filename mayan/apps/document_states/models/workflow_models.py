@@ -8,6 +8,7 @@ from mayan.apps.acls.models import AccessControlList
 from django.dispatch import receiver
 from django.db.models.signals import post_save
 from mayan.apps.permissions.models import Role
+from django.contrib.auth import get_user_model
 from django.apps import apps
 from django.core import serializers
 from django.db import IntegrityError, models
@@ -74,6 +75,7 @@ class Workflow(ExtraDataModelMixin, models.Model):
             'Date and time for this workflow is deactivated.'
         ), verbose_name=_('End Date Time')
     )
+    created_by = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, null=True, blank=True)
 
     objects = WorkflowManager()
 
@@ -336,7 +338,7 @@ def make_acls(sender, instance, created, **kwargs):
             content_type=ContentType.objects
                 .get(app_label='document_states', model='workflow'),
             content_object=instance,
-            role=Role.objects.get(label='chip')
+            role=Role.objects.get(label=instance.created_by.username)
         )
 
 class WorkflowRuntimeProxy(Workflow):

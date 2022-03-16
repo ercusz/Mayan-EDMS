@@ -135,6 +135,10 @@ class WorkflowTemplateCreateView(SingleObjectCreateView):
         return {
             '_event_actor': self.request.user
         }
+        
+    def form_valid(self, form):
+        form.instance.created_by = self.request.user
+        return super().form_valid(form)
 
 
 class WorkflowTemplateDeleteView(MultipleObjectDeleteView):
