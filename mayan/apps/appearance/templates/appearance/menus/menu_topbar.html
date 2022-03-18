@@ -2,6 +2,7 @@
 
 {% load navigation_tags %}
 {% load smart_settings_tags %}
+{% load appearance_tags %}
 
 {% spaceless %}
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -15,7 +16,7 @@
                 </button>
                 <!-- <a class="navbar-brand" href="{% url home_view %}">{% smart_setting 'COMMON_PROJECT_TITLE' %}</a> -->
                 <a class="navbar-brand" href="{% url home_view %}">
-                    <img src="static/appearance/images/cp.svg" style="height: 38px;" alt="College of Computing">
+                    <img src="{% appearance_get_logo %}" style="height: 38px;" alt="College of Computing">
                     {% trans 'College of Computing' %}
                 </a>
             </div>

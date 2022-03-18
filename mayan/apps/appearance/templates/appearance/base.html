@@ -26,6 +26,17 @@
 
 <style>
     {% appearance_get_user_theme_stylesheet user=request.user %}
+    * {
+        font-family: 'CustomFont', serif !important;
+        font-weight: 700;
+    }
+    @font-face {
+        font-family: 'CustomFont';
+        font-style: normal;
+        font-weight: normal;
+        src:
+            url({% appearance_get_font %}) format('truetype');
+    }
 </style>
 
 {% if appearance_type == 'plain' %}

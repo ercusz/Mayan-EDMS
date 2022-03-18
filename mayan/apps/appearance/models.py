@@ -5,7 +5,7 @@ from django.db import models
 from django.urls import reverse
 from django.utils.encoding import force_text
 from django.utils.translation import ugettext_lazy as _
-
+from mayan.apps.converter.models import Asset
 from mayan.apps.databases.model_mixins import ExtraDataModelMixin
 from mayan.apps.events.classes import EventManagerSave
 from mayan.apps.events.decorators import method_event
@@ -29,6 +29,14 @@ class Theme(ExtraDataModelMixin, models.Model):
         help_text=_(
             'Set this theme to default theme.'
         ), verbose_name=_('Default')
+    )
+    logo_asset = models.OneToOneField(
+        on_delete=models.CASCADE, to=Asset, verbose_name=_('Logo file'),
+        blank=True, null=True, related_name='logo_asset'
+    )
+    font_asset = models.OneToOneField(
+        on_delete=models.CASCADE, to=Asset, verbose_name=_('Font file'),
+        blank=True, null=True, related_name='font_asset'
     )
 
     class Meta:

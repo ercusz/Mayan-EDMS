@@ -68,6 +68,27 @@ class APIAssetImageView(APIImageViewMixin, generics.RetrieveAPIView):
     queryset = Asset.objects.all()
 
 
+class APIAssetDownloadView(generics.RetrieveAPIView):
+    """
+    get: Returns a asset file of the selected document.
+    """
+    lookup_url_kwarg = 'asset_id'
+
+    def get_object(self):
+        return Asset.objects.get(id=self.kwargs[self.lookup_url_kwarg])
+
+    def get_serializer(self, *args, **kwargs):
+        return None
+
+    def get_serializer_class(self):
+        return None
+
+    def retrieve(self, request, *args, **kwargs):
+        with self.get_object().open() as file_object:
+            response = HttpResponse(content=file_object.read(), content_type='application/force-download')
+            return response
+
+
 class APIAppImageErrorImageView(generics.RetrieveAPIView):
     """
     get: Returns an image representation of the selected app image error.

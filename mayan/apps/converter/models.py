@@ -132,6 +132,16 @@ class Asset(ExtraDataModelMixin, models.Model):
         final_url.args['_hash'] = self.get_hash()
 
         return final_url.tostr()
+    
+    def get_api_file_url(self, *args, **kwargs):
+        final_url = furl()
+        final_url.args = kwargs
+        final_url.path = reverse(
+            viewname='rest_api:asset-download',
+            kwargs={'asset_id': self.pk}
+        )
+
+        return final_url.tostr()
 
     def get_hash(self):
         with self.open() as file_object:

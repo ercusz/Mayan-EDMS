@@ -7,6 +7,7 @@ from django.template.loader import get_template
 from django.utils.module_loading import import_string
 from django.utils.safestring import mark_safe
 from django.utils.translation import ugettext_lazy as _
+from mayan.apps.appearance.models import Theme
 from ..models import Theme 
 from ..literals import COMMENT_APP_TEMPLATE_CACHE_DISABLE
 
@@ -73,20 +74,51 @@ def appearance_get_icon(icon_path):
 
 @register.simple_tag
 def appearance_get_user_theme_stylesheet(user):
-    User = get_user_model()
+    # User = get_user_model()
 
-    if user and user.is_authenticated:
-        try:
-            theme = user.theme_settings.theme
-        except User.theme_settings.RelatedObjectDoesNotExist:
-            # User had a setting assigned which was later deleted.
-            return ''
-        else:
-            if theme:
-                return user.theme_settings.theme.stylesheet
+    # if user and user.is_authenticated:
+    #     try:
+    #         theme = user.theme_settings.theme
+    #     except User.theme_settings.RelatedObjectDoesNotExist:
+    #         # User had a setting assigned which was later deleted.
+    #         return ''
+    #     else:
+    #         if theme:
+    #             return user.theme_settings.theme.stylesheet
 
+    # return ''
+    try:
+        theme = Theme.objects.get(default=True)
+    except Theme.DoesNotExist:
+        return ''
+    else:
+        if theme:
+            return theme.stylesheet
     return ''
 
+@register.simple_tag
+def appearance_get_logo():
+    try:
+        logo_asset = Theme.objects.get(default=True).logo_asset
+    except Theme.DoesNotExist:
+        return "static/appearance/images/cp.svg"      
+    else:
+        if logo_asset:
+            return logo_asset.get_api_image_url()
+
+    return "static/appearance/images/cp.svg"  
+
+@register.simple_tag
+def appearance_get_font():
+    try:
+        font_asset = Theme.objects.get(default=True).font_asset
+    except Theme.DoesNotExist:
+        return "../fonts/Prompt-Regular.ttf"
+    else:
+        if font_asset:
+            return font_asset.get_api_file_url()
+
+    return "../fonts/Prompt-Regular.ttf"  
 
 @register.simple_tag
 def appearance_icon_render(icon, enable_shadow=False):

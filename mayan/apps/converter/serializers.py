@@ -8,6 +8,10 @@ class AssetSerializer(serializers.HyperlinkedModelSerializer):
         lookup_url_kwarg='asset_id',
         view_name='rest_api:asset-image'
     )
+    download_url = serializers.HyperlinkedIdentityField(
+        lookup_url_kwarg='asset_id',
+        view_name='rest_api:asset-download'
+    )
 
     class Meta:
         extra_kwargs = {
@@ -17,6 +21,6 @@ class AssetSerializer(serializers.HyperlinkedModelSerializer):
             },
         }
         fields = (
-            'file', 'label', 'id', 'image_url', 'internal_name', 'url'
+            'file', 'label', 'id', 'image_url', 'internal_name', 'url', 'download_url'
         )
         model = Asset
