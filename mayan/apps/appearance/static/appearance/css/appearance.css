@@ -11,18 +11,35 @@
     --cp_color: #0F75BD;
     --cp_color_custom: #0a5286;
     --cp_white: rgba(255,255,255,0.95);
+    --cp_text_hover: white;
+    --cp_background:#81A684;        /*background page*/
+    --cp_hover:#487564;             /*hover */
+    --cp_menu_expand:#6C845A;      /*expand menu*/
+    --cp_menu_box :#18291c;         /*left box sidebar*/
+    --cp_left_menu : #386665;       /*left menu background*/
+    --cp_button : #487564;          /*All button*/
+    --cp_header : #386665;          /*header background color*/
+    --cp_block : #6C845A;           /*block background*/
+    --cp_text_left_menu : white;           /*block background*/
 }
+body {
+    background-color: var(--cp_background); /*background page*/
+    color: rgb(48, 17, 17);
+   }
 
 a {
     color: var(--cp_color);
 }
-
+.aria-controls{
+    color: var(--cp_color)!important;
+}
 a:hover {
-    color: var(--cp_color_custom);
+    color: var(--cp_hover)!important; /* hover link ex. view detail (Home page)*/
 }
 
-.btn-primary {
-    background-color: var(--cp_color) !important;
+.btn-primary,
+.btn-default {
+    background-color: var(--cp_button) !important; /* button*/
 }
 
 .panel-primary>.panel-heading {
@@ -35,9 +52,19 @@ a:hover {
     color: var(--cp_white) !important;
 }
 
+#navbar{
+    background-color:var(--cp_header)   /*header background*/
+}
+.dropdown-menu, .dropdown-menu li a{
+    background-color:var(--cp_menu_expand); /*expand right sidebar background*/
+} 
+
 .navbar-brand {
     font-family: "Prompt-Regular", serif;
     font-weight: 700;
+}
+.center-block, .well{
+    background-color:var(--cp_block)  /*block background*/
 }
 
 #appearance-main-viewport {
@@ -407,13 +434,13 @@ a i {
 
 /* custom navbar */
 .navbar, .navbar a {
-    background-color: var(--cp_white); /* white color */
+    background-color: var(--cp_header); /* white color */
 }
 .navbar {
-    color: black;
+    color: var(--cp_text_hover);
 }
 .navbar a {
-    color: var(--cp_color) !important;
+    color: var(--cp_text_hover)!important;  /* navbar header text  */
 }
 
 /* menu_main */
@@ -421,7 +448,7 @@ a i {
 
 #menu-main {
     display: block;
-    background-color: var(--cp_white); /* white color */
+    background-color: var(--cp_left_menu); /* left menu background  */
     border-right: 1px solid var(--cp_color); /* cp color */
     bottom: 0;
     left: -210px;
@@ -524,13 +551,16 @@ a i {
     margin-left: 0px;
     width: 100%;
 }
+.panel.panel-default{
+    background-color:var(--cp_menu_box); /* menu box color*/
+}
 
 #accordion-sidebar a {
     padding: 10px 15px;
 }
 
 #accordion-sidebar a[aria-expanded="true"] {
-    background: var(--cp_color); /* cp color */
+    background: var(--cp_hover); /* press expand left menu */
     color: var(--cp_white) !important;
     font-weight: 700;
 }
@@ -545,7 +575,7 @@ a i {
 
 #accordion-sidebar > .panel > div > div > ul > li > a,
 #accordion-sidebar > .panel > div > h4 > a {
-    color: var(--cp_color); /* cp color */
+    color: var(--cp_text_left_menu); /* text left menu */
     text-decoration: none;
     outline: none;
     position: relative;
@@ -559,7 +589,7 @@ a i {
 }
 
 #accordion-sidebar .panel-heading:hover {
-    background-color: var(--cp_color_custom); /* cp color custom */
+    background-color: var(--cp_hover); /* box/ left menu*/
     color: var(--cp_white); /* white color */
     transition: .1s ease;
 }
@@ -569,7 +599,7 @@ a i {
 }
 
 #accordion-sidebar > .panel > div > .panel-body > ul > li:hover {
-    background-color: var(--cp_color_custom); /* cp color custom */
+    background-color: var(--cp_hover); /* (hover) expand left sidebar*/
     transition: .1s ease;
 }
 
@@ -585,7 +615,7 @@ a i {
 #accordion-sidebar .panel-body {
     font-size: 13px;
     border: 0px;
-    background-color: transparent;
+    background-color: var(--cp_menu_expand); /*left expand menu /dropdown */
     padding-top: 3px;
     padding-left: 20px;
     padding-right: 0px;
@@ -620,9 +650,9 @@ a i {
     font-weight: 700;
 }
 
-.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus {
-    background-color: var(--cp_color_custom); /* cp color custom */
-    color: var(--cp_white) !important; /* white color */
+.dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
+    background-color: var(--cp_hover); /* (hover) expand right menu */
+    color: var(--cp_text_hover) !important; /* (text hover) expand right menu */
     transition: .1s ease;
     font-weight: 700;
 }
@@ -661,9 +691,9 @@ a i {
     z-index: 90;
 }
 
-.dropdown-menu > li > a {
-    color: #585e5e;
-}
+/*.dropdown-menu > li > a {
+    color: #f9ffff;
+}*/
 
 .dropdown-header {
     text-align:center;
