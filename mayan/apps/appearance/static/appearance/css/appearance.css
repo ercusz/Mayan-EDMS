@@ -1,10 +1,9 @@
 @font-face {
-    font-family: 'Prompt-Regular';
+    font-family: 'CustomFont';
     font-style: normal;
     font-weight: normal;
-    src:
-        local('Prompt-Regular'),
-        url('../fonts/Prompt-Regular.ttf') format('truetype');
+    src:    local('Prompt-Regular'),
+            url('../fonts/Prompt-Regular.ttf') format('truetype');
 }
 
 :root {
@@ -53,6 +52,12 @@
     --cp_button : var(--cp_lime_green);          /*10. All button*/
     --cp_helpblock:var(--cp_bluish_gray);            /* 11. text help block */
 }
+
+* {
+    font-family: 'CustomFont', Helvetica !important;
+    font-weight: 700;
+}
+
 body {
     background-color: var(--cp_background); /*8.1 background page*/
     color: var(--cp_text_backgroud);     /*8.2 text ex. home page, g1sec2*/
@@ -61,11 +66,13 @@ body {
 a {
     color: var(--cp_color);
 }
+
 .aria-controls{
-    color: var(--cp_color)!important;
+    color: var(--cp_color) !important;
 }
+
 a:hover {
-    color: var(--cp_hover)!important; /* hover link ex. view detail (Home page)*/
+    color: var(--cp_hover) !important; /* hover link ex. view detail (Home page)*/
 }
 .navbar-default .navbar-nav>li>a:hover {
     color: var(--cp_text_hover_right) !important;       /*6.2 text right hover*/
@@ -78,6 +85,8 @@ a:hover {
 }
 .help-block{
     color: var(--cp_helpblock);    /*11. help block*/
+    background-color: var(--cp_button) !important; /* button*/
+    border-color: var(--cp_button) !important;
 }
 
 .panel-primary>.panel-heading {
@@ -98,7 +107,7 @@ a:hover {
 } 
 
 .navbar-brand {
-    font-family: "Prompt-Regular", serif;
+    font-family: "CustomFont", serif;
     font-weight: 700;
 }
 .center-block, .well{

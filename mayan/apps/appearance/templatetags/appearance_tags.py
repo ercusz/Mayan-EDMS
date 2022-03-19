@@ -111,14 +111,11 @@ def appearance_get_logo():
 @register.simple_tag
 def appearance_get_font():
     try:
-        font_asset = Theme.objects.get(default=True).font_asset
-    except Theme.DoesNotExist:
+        font_url = Theme.objects.get(default=True).font_asset.get_api_file_url()
+    except:
         return "../fonts/Prompt-Regular.ttf"
-    else:
-        if font_asset:
-            return font_asset.get_api_file_url()
 
-    return "../fonts/Prompt-Regular.ttf"  
+    return font_url
 
 @register.simple_tag
 def appearance_icon_render(icon, enable_shadow=False):
