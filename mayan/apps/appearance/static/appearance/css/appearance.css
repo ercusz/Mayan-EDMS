@@ -11,20 +11,51 @@
     --cp_color: #0F75BD;
     --cp_color_custom: #0a5286;
     --cp_white: rgba(255,255,255,0.95);
-    --cp_text_hover: white;
-    --cp_background:#81A684;        /*background page*/
-    --cp_hover:#487564;             /*hover */
-    --cp_menu_expand:#6C845A;      /*expand menu*/
-    --cp_menu_box :#18291c;         /*left box sidebar*/
-    --cp_left_menu : #386665;       /*left menu background*/
-    --cp_button : #487564;          /*All button*/
-    --cp_header : #386665;          /*header background color*/
-    --cp_block : #6C845A;           /*block background*/
-    --cp_text_left_menu : white;           /*block background*/
+    --cp_mint_green: #386665;
+    --cp_dark_green:#18291c; 
+    --cp_black: black;
+    --cp_bright_green: #C0EDD0;
+    --cp_sakura_pink: #FF8F7F;
+    --cp_purple: #6a1b9a;
+    --cp_yellow: #F1DD6A;
+    --cp_orange: #ef6c00;
+    --cp_cyan_soft: #b2ebf2;
+    --cp_cyan_dark: #006064;
+    --cp_pastel_purple: #9292D1;
+    --cp_pastel_cream: #F5E3CB;
+    --cp_wood_dark: #a47454;
+    --cp_wood_soft: #dbbc8c;
+    --cp_pink_soft: #f8bbd0;
+    --cp_pink_dark: #880e4f;
+    --cp_dark_turquoise: #4db6ac;
+    --cp_lime_green:#cddc39;
+    --cp_bluish_gray:#263238;
+
+    --cp_text_active: var(--cp_black);  /*4.4 text active left expand menu */
+    --cp_text:var(--cp_black);        /*3.1/6.1 text color */
+    --cp_background:var(--cp_pink_soft);        /*8.1 background page*/
+    --cp_text_backgroud:var(--cp_pink_dark);             /*8.2 text background page*/
+    --cp_hover:var(--cp_bright_green);             /*4.3 hover */
+    --cp_menu_box: var(--cp_dark_green);         /*4.1 left box sidebar*/
+    --cp_left_menu : var(--cp_mint_green);       /*3 left menu background*/
+    --cp_header : var(--cp_mint_green);          /*3 header background color*/
+    --cp_text_left_menu : var(--cp_orange);           /*4.2/5.3 text left box*/
+    --cp_hover_expand_left:var(--cp_sakura_pink);    /*5.1 hover expand left box*/
+    --cp_text_hover_expand_left:var(--cp_purple);            /*5.1 text hover expand left box*/
+    --cp_menu_expand_left:var(--cp_yellow);          /*5.2 left expand menu background*/
+    --cp_hover_right:var(--cp_pastel_purple);           /*6.2/6.3 right hover menu*/
+    --cp_text_hover_right:var(--cp_pastel_cream);         /*6.2/6.3 text right hover*/
+    --cp_text_hover_expand_right:var(--cp_cyan_soft);   /*7.1 text right expand hover*/
+    --cp_hover_expand_right:var(--cp_cyan_dark);    /*7.1 right expand hover*/
+    --cp_menu_expand_right:var(--cp_wood_dark);        /*7.2 expand right sidebar background*/
+    --cp_text_expand_right:var(--cp_wood_soft);             /* 7.3 text expand right menu */
+    --cp_block : var(--cp_dark_turquoise);           /*9. block background*/
+    --cp_button : var(--cp_lime_green);          /*10. All button*/
+    --cp_helpblock:var(--cp_bluish_gray);            /* 11. text help block */
 }
 body {
-    background-color: var(--cp_background); /*background page*/
-    color: rgb(48, 17, 17);
+    background-color: var(--cp_background); /*8.1 background page*/
+    color: var(--cp_text_backgroud);     /*8.2 text ex. home page, g1sec2*/
    }
 
 a {
@@ -36,10 +67,17 @@ a {
 a:hover {
     color: var(--cp_hover)!important; /* hover link ex. view detail (Home page)*/
 }
+.navbar-default .navbar-nav>li>a:hover {
+    color: var(--cp_text_hover_right) !important;       /*6.2 text right hover*/
+    background-color: var(--cp_hover_right) !important;  /*6.2 menu right hover*/
+}
 
 .btn-primary,
 .btn-default {
-    background-color: var(--cp_button) !important; /* button*/
+    background-color: var(--cp_button) !important; /*10. button*/
+}
+.help-block{
+    color: var(--cp_helpblock);    /*11. help block*/
 }
 
 .panel-primary>.panel-heading {
@@ -56,7 +94,7 @@ a:hover {
     background-color:var(--cp_header)   /*header background*/
 }
 .dropdown-menu, .dropdown-menu li a{
-    background-color:var(--cp_menu_expand); /*expand right sidebar background*/
+    background-color:var(--cp_menu_expand_right); /*7.2 expand right sidebar background*/
 } 
 
 .navbar-brand {
@@ -64,7 +102,7 @@ a:hover {
     font-weight: 700;
 }
 .center-block, .well{
-    background-color:var(--cp_block)  /*block background*/
+    background-color:var(--cp_block)  /*9. block background*/
 }
 
 #appearance-main-viewport {
@@ -434,14 +472,14 @@ a i {
 
 /* custom navbar */
 .navbar, .navbar a {
-    background-color: var(--cp_header); /* white color */
+    background-color: var(--cp_header); /* header a color */
 }
-.navbar {
-    color: var(--cp_text_hover);
-}
-.navbar a {
-    color: var(--cp_text_hover)!important;  /* navbar header text  */
-}
+/* .navbar {
+    color: purple;   /* text expand right menu 
+} */
+/* .navbar a {
+    color: rebeccapurple!important;  /* navbar header text  
+} */
 
 /* menu_main */
 /* Hide for mobile, show later */
@@ -560,10 +598,11 @@ a i {
 }
 
 #accordion-sidebar a[aria-expanded="true"] {
-    background: var(--cp_hover); /* press expand left menu */
-    color: var(--cp_white) !important;
+    background: var(--cp_hover); /*4.4 press expand left menu */
+    color: var(--cp_text_active) !important;    /*4.4 press text expand left menu */
     font-weight: 700;
 }
+
 
 #accordion-sidebar .panel {
     border: 0px;
@@ -575,7 +614,7 @@ a i {
 
 #accordion-sidebar > .panel > div > div > ul > li > a,
 #accordion-sidebar > .panel > div > h4 > a {
-    color: var(--cp_text_left_menu); /* text left menu */
+    color: var(--cp_text_left_menu); /*4.2/5.3  text left menu */
     text-decoration: none;
     outline: none;
     position: relative;
@@ -590,7 +629,7 @@ a i {
 
 #accordion-sidebar .panel-heading:hover {
     background-color: var(--cp_hover); /* box/ left menu*/
-    color: var(--cp_white); /* white color */
+    color: var(--cp_white) !important; /* white color */
     transition: .1s ease;
 }
 
@@ -599,12 +638,12 @@ a i {
 }
 
 #accordion-sidebar > .panel > div > .panel-body > ul > li:hover {
-    background-color: var(--cp_hover); /* (hover) expand left sidebar*/
+    background-color: var(--cp_hover_expand_left); /* (hover) expand left sidebar*/
     transition: .1s ease;
 }
 
 #accordion-sidebar a:hover {
-    color: var(--cp_white) !important; /* white color */
+    color: var(--cp_text_hover_expand_left) !important; /* text hover expand left menu*/
     font-weight: 700;
 }
 
@@ -615,7 +654,7 @@ a i {
 #accordion-sidebar .panel-body {
     font-size: 13px;
     border: 0px;
-    background-color: var(--cp_menu_expand); /*left expand menu /dropdown */
+    background-color: var(--cp_menu_expand_left); /*left expand menu /dropdown */
     padding-top: 3px;
     padding-left: 20px;
     padding-right: 0px;
@@ -645,14 +684,14 @@ a i {
 }
 
 .navbar-default .navbar-nav>.open>a {
-    background-color: var(--cp_color) !important; /* cp color */
-    color: var(--cp_white) !important; /* white color */
+    background-color: var(--cp_hover_right) !important; /*6.3 active right menu */
+    color: var(--cp_text_hover_right) !important; /*6.3 text right active menu */
     font-weight: 700;
 }
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
-    background-color: var(--cp_hover); /* (hover) expand right menu */
-    color: var(--cp_text_hover) !important; /* (text hover) expand right menu */
+    background-color: var(--cp_hover_expand_right); /*7.1 (hover) expand right menu */
+    color: var(--cp_text_hover_expand_right) !important; /*7.1 (text hover) expand right menu */
     transition: .1s ease;
     font-weight: 700;
 }
@@ -691,9 +730,9 @@ a i {
     z-index: 90;
 }
 
-/*.dropdown-menu > li > a {
-    color: #f9ffff;
-}*/
+.dropdown-menu > li > a {
+    color: var(--cp_text_expand_right)     /* 7.3 text expand right menu */
+}
 
 .dropdown-header {
     text-align:center;
