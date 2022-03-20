@@ -38,7 +38,8 @@
     --cp_header : var(--cp_white);          /*3.3 header background color ---(1)*/
     --cp_menu_box: var(--cp_white);            /*4.1 left box sidebar ---(3)*/
     --cp_text_left_menu : var(--cp_color);           /*4.2/5.3 text left box ---(6)*/
-    --cp_hover:var(--cp_color);                      /*4.3 hover left box ---(4)*/
+    --cp_hover:var(--cp_color_custom);                      /*link hover all ---(4)*/
+    --cp_hover_left:var(--cp_color);                      /*4.3 hover left box ---(4)*/
     --cp_text_hover_expand_left:var(--cp_white);     /*4.3/5.1 text hover expand left box ---(5)*/
     --cp_text_active: var(--cp_white);              /*4.4 text active left expand menu ---(5)*/
     --cp_hover_expand_left:var(--cp_color);    /*5.1 hover expand left box ---(4)*/
@@ -64,20 +65,36 @@ a {
     color: var(--cp_color);
 }
 .aria-controls{
-    color: var(--cp_color)!important;
+    color: var(--cp_color) !important;
 }
 a:hover {
-    color: var(--cp_hover)!important; /* hover link ex. view detail (Home page)*/
+    color: var(--cp_hover); /* hover link ex. view detail (Home page)*/
 }
 .navbar-default .navbar-nav>li>a:hover {
     color: var(--cp_text_hover_right) !important;       /*6.2 text right hover*/
     background-color: var(--cp_hover_right) !important;  /*6.2 menu right hover*/
+    transition: all .2s ease;
 }
 
-.btn-primary,
-.btn-default {
+.btn-primary {
+    color: var(--cp_white) !important;
     background-color: var(--cp_button) !important; /*10. button*/
 }
+
+.btn {
+    border: none;
+    box-shadow: 0px 2px 2px rgba(0, 0, 0, 1);
+}
+
+.dropdown-menu > li > a {
+    box-shadow: none;
+}
+
+.btn:hover {
+    /* box-shadow: 0px 15px 20px var(--cp_button); */
+    transform: translateY(-2px);
+  }
+
 .help-block{
     color: var(--cp_helpblock);    /*11. help block*/
 }
@@ -449,7 +466,7 @@ a i {
 .btn-info.btn-outline:hover,
 .btn-warning.btn-outline:hover,
 .btn-danger.btn-outline:hover {
-    color: var(--cp_white);
+    color: var(--cp_white) !important;
 }
 
 .btn-list > .btn {
@@ -525,7 +542,8 @@ a i {
 }
 
 .menu-user-name {
-    color: var(--cp_white);
+    color: var(--cp_text_header);
+    font-weight: 700;
 }
 
 #multi-item-title-responsible-wrapper {
@@ -600,7 +618,7 @@ a i {
 }
 
 #accordion-sidebar a[aria-expanded="true"] {
-    background: var(--cp_hover); /*4.4 press expand left menu */
+    background: var(--cp_hover_left); /*4.4 press expand left menu */
     color: var(--cp_text_active) !important;    /*4.4 press text expand left menu */
     font-weight: 700;
 }
@@ -630,7 +648,7 @@ a i {
 }
 
 #accordion-sidebar .panel-heading:hover {
-    background-color: var(--cp_hover); /* box/ left menu*/
+    background-color: var(--cp_hover_left); /* box/ left menu*/
     color: var(--cp_white) !important; /* white color */
     transition: .1s ease;
 }

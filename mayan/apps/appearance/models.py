@@ -22,13 +22,13 @@ class Theme(ExtraDataModelMixin, models.Model):
         blank=True, help_text=_(
             'The CSS stylesheet to change the appearance of the different '
             'user interface elements.'
-        ), verbose_name=_('Stylesheet')
+        ), verbose_name=_('Stylesheet (Advanced)')
     )
     default = models.BooleanField(
         default=False,
         help_text=_(
             'Set this theme to default theme.'
-        ), verbose_name=_('Default')
+        ), verbose_name=_('Default Theme')
     )
     logo_asset = models.OneToOneField(
         on_delete=models.CASCADE, to=Asset, verbose_name=_('Logo file'),

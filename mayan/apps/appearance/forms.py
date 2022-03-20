@@ -13,12 +13,12 @@ class ThemeForm(forms.ModelForm):
     font_file = forms.FileField(required=False)
 
     class Meta:
-        fields = ('label', 'stylesheet', 'default', 'logo_file', 'font_file',)
+        fields = ('default', 'label', 'logo_file', 'font_file', 'stylesheet',)
         model = Theme
         widgets = {
             'font_file': forms.FileInput(
                 attrs={
-                    'accept': '.eot, .ttf, .woff, .otf'
+                    'accept': '.woff2, .woff, .ttf, .otf'
                 }
             )
         }

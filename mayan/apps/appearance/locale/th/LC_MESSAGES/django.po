@@ -114,11 +114,11 @@ msgstr "ป้ายกำกับ"
 msgid ""
 "The CSS stylesheet to change the appearance of the different user interface "
 "elements."
-msgstr "CSS stylesheet สำหรับใช้ในการเปลี่ยนการแสดงผลของหน้าเว็บ"
+msgstr "โค้ด CSS stylesheet สำหรับใช้ในการเปลี่ยนการแสดงผลส่วนต่าง ๆ ของหน้าเว็บ"
 
 #: models.py:25
-msgid "Stylesheet"
-msgstr ""
+msgid "Stylesheet (Advanced)"
+msgstr "Stylesheet (ขั้นสูง)"
 
 #: models.py:30 models.py:68
 msgid "Theme"
@@ -453,3 +453,19 @@ msgstr "ธีมช่วยเปลี่ยนการแสดงผลห
 #: views.py:109
 msgid "There are no themes"
 msgstr "ไม่มีธีม"
+
+#: models.py:30
+msgid "Set this theme to default theme."
+msgstr "ตั้งให้ธีมนี้เป็นธีมเริ่มต้นของระบบ"
+
+#: models.py:31
+msgid "Default Theme"
+msgstr "ธีมเริ่มต้น"
+
+#: forms.py:34
+msgid "Logo file"
+msgstr "ไฟล์โลโก้"
+
+#: models.py:38
+msgid "Font file"
+msgstr "ไฟล์ฟอนต์"
