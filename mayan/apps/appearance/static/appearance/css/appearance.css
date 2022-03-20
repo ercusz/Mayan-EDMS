@@ -1,15 +1,17 @@
 @font-face {
-    font-family: 'CustomFont';
+    font-family: 'Prompt-Regular';
     font-style: normal;
     font-weight: normal;
-    src:    local('Prompt-Regular'),
-            url('../fonts/Prompt-Regular.ttf') format('truetype');
+    src:
+        local('Prompt-Regular'),
+        url('../fonts/Prompt-Regular.ttf') format('truetype');
 }
 
 :root {
     --cp_color: #0F75BD;
     --cp_color_custom: #0a5286;
     --cp_white: rgba(255,255,255,0.95);
+    --cp_gray: #ECF0F1;
     --cp_mint_green: #386665;
     --cp_dark_green:#18291c; 
     --cp_black: black;
@@ -29,35 +31,30 @@
     --cp_dark_turquoise: #4db6ac;
     --cp_lime_green:#cddc39;
     --cp_bluish_gray:#263238;
+    --cp_test:#cddc39;
 
-    --cp_text_active: var(--cp_black);  /*4.4 text active left expand menu */
-    --cp_text:var(--cp_black);        /*3.1/6.1 text color */
-    --cp_background:var(--cp_pink_soft);        /*8.1 background page*/
-    --cp_text_backgroud:var(--cp_pink_dark);             /*8.2 text background page*/
-    --cp_hover:var(--cp_bright_green);             /*4.3 hover */
-    --cp_menu_box: var(--cp_dark_green);         /*4.1 left box sidebar*/
-    --cp_left_menu : var(--cp_mint_green);       /*3 left menu background*/
-    --cp_header : var(--cp_mint_green);          /*3 header background color*/
-    --cp_text_left_menu : var(--cp_orange);           /*4.2/5.3 text left box*/
-    --cp_hover_expand_left:var(--cp_sakura_pink);    /*5.1 hover expand left box*/
-    --cp_text_hover_expand_left:var(--cp_purple);            /*5.1 text hover expand left box*/
-    --cp_menu_expand_left:var(--cp_yellow);          /*5.2 left expand menu background*/
-    --cp_hover_right:var(--cp_pastel_purple);           /*6.2/6.3 right hover menu*/
-    --cp_text_hover_right:var(--cp_pastel_cream);         /*6.2/6.3 text right hover*/
-    --cp_text_hover_expand_right:var(--cp_cyan_soft);   /*7.1 text right expand hover*/
-    --cp_hover_expand_right:var(--cp_cyan_dark);    /*7.1 right expand hover*/
-    --cp_menu_expand_right:var(--cp_wood_dark);        /*7.2 expand right sidebar background*/
-    --cp_text_expand_right:var(--cp_wood_soft);             /* 7.3 text expand right menu */
-    --cp_block : var(--cp_dark_turquoise);           /*9. block background*/
-    --cp_button : var(--cp_lime_green);          /*10. All button*/
+    --cp_text_header: var(--cp_color);      /* 3.1/6.1 text header ---(6)*/
+    --cp_left_menu : var(--cp_white);       /*3.2 left menu background ---(1)*/
+    --cp_header : var(--cp_white);          /*3.3 header background color ---(1)*/
+    --cp_menu_box: var(--cp_white);            /*4.1 left box sidebar ---(3)*/
+    --cp_text_left_menu : var(--cp_color);           /*4.2/5.3 text left box ---(6)*/
+    --cp_hover:var(--cp_color);                      /*4.3 hover left box ---(4)*/
+    --cp_text_hover_expand_left:var(--cp_white);     /*4.3/5.1 text hover expand left box ---(5)*/
+    --cp_text_active: var(--cp_white);              /*4.4 text active left expand menu ---(5)*/
+    --cp_hover_expand_left:var(--cp_color);    /*5.1 hover expand left box ---(4)*/
+    --cp_menu_expand_left:var(--cp_white);          /*5.2 left expand menu background ---(8)*/
+    --cp_hover_right:var(--cp_color);           /*6.2/6.3 right hover menu ---(4)*/
+    --cp_text_hover_right:var(--cp_white);         /*6.2/6.3 text right hover ---(5)*/
+    --cp_text_hover_expand_right:var(--cp_white);   /*7.1 text right expand hover ---(5)*/
+    --cp_hover_expand_right:var(--cp_color);    /*7.1 right expand hover ---(4)*/
+    --cp_menu_expand_right:var(--cp_white);        /*7.2 expand right sidebar background ---(8)*/
+    --cp_text_expand_right:var(--cp_color);             /* 7.3 text expand right menu ---(6)*/
+    --cp_background:var(--cp_white);                /*8.1 background page ---(2)*/
+    --cp_text_backgroud:var(--cp_color_custom);             /*8.2 text background page ---(7)*/
+    --cp_block : var(--cp_gray);           /*9. block background*/
+    --cp_button : var(--cp_color);          /*10. All button ---(9)*/
     --cp_helpblock:var(--cp_bluish_gray);            /* 11. text help block */
 }
-
-* {
-    font-family: 'CustomFont', Helvetica !important;
-    font-weight: 700;
-}
-
 body {
     background-color: var(--cp_background); /*8.1 background page*/
     color: var(--cp_text_backgroud);     /*8.2 text ex. home page, g1sec2*/
@@ -66,13 +63,11 @@ body {
 a {
     color: var(--cp_color);
 }
-
 .aria-controls{
-    color: var(--cp_color) !important;
+    color: var(--cp_color)!important;
 }
-
 a:hover {
-    color: var(--cp_hover) !important; /* hover link ex. view detail (Home page)*/
+    color: var(--cp_hover)!important; /* hover link ex. view detail (Home page)*/
 }
 .navbar-default .navbar-nav>li>a:hover {
     color: var(--cp_text_hover_right) !important;       /*6.2 text right hover*/
@@ -85,8 +80,6 @@ a:hover {
 }
 .help-block{
     color: var(--cp_helpblock);    /*11. help block*/
-    background-color: var(--cp_button) !important; /* button*/
-    border-color: var(--cp_button) !important;
 }
 
 .panel-primary>.panel-heading {
@@ -107,7 +100,7 @@ a:hover {
 } 
 
 .navbar-brand {
-    font-family: "CustomFont", serif;
+    font-family: "Prompt-Regular", serif;
     font-weight: 700;
 }
 .center-block, .well{
@@ -486,9 +479,9 @@ a i {
 /* .navbar {
     color: purple;   /* text expand right menu 
 } */
-/* .navbar a {
-    color: rebeccapurple!important;  /* navbar header text  
-} */
+.navbar a {
+    color: var(--cp_text_header) !important;  /*3. navbar header text  */
+}
 
 /* menu_main */
 /* Hide for mobile, show later */
@@ -740,7 +733,7 @@ a i {
 }
 
 .dropdown-menu > li > a {
-    color: var(--cp_text_expand_right)     /* 7.3 text expand right menu */
+    color: var(--cp_text_expand_right) !important     /* 7.3 text expand right menu */
 }
 
 .dropdown-header {
