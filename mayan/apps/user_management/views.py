@@ -171,6 +171,7 @@ class UserCreateView(SingleObjectCreateView):
     def form_valid(self, form):
         super().form_valid(form=form)
 
+        # each user group/roles
         role, created = Role.objects.get_or_create(
             label=self.object.username,
         )
@@ -182,6 +183,19 @@ class UserCreateView(SingleObjectCreateView):
         role.groups.add(new_group)
 
         self.object.groups.add(new_group)
+
+        # Users group/role for everyone
+        users_role, created = Role.objects.get_or_create(
+            label="Users",
+        )
+
+        users_group, created = Group.objects.get_or_create(
+            name="Users"
+        )
+
+        users_role.groups.add(users_group)
+
+        self.object.groups.add(users_group)
 
         return HttpResponseRedirect(
             reverse(

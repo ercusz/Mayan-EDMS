@@ -24,6 +24,7 @@ from mayan.apps.documents.permissions import permission_document_view
 from mayan.apps.events.classes import EventManagerSave
 from mayan.apps.events.decorators import method_event
 from mayan.apps.file_caching.models import CachePartitionFile
+from mayan.apps.permissions.classes import Permission
 from ..events import (
     event_workflow_template_created, event_workflow_template_edited
 )
@@ -112,6 +113,12 @@ class Workflow(ExtraDataModelMixin, models.Model):
 
     def delete(self, *args, **kwargs):
         self.cache_partition.delete()
+        try:
+            DocumentType.objects.get(label=self.label).delete()
+        except:
+            logger.debug(
+                'Documents Types label="%s" not found', self.label
+            )
         return super().delete(*args, **kwargs)
 
     def document_types_add(self, queryset, _event_actor=None):
@@ -329,10 +336,13 @@ class Workflow(ExtraDataModelMixin, models.Model):
     def save(self, *args, **kwargs):
         return super().save(*args, **kwargs)
 
-# after X workflow created 
-# create a new acls and set object = X workflow
+
 @receiver(post_save, sender=Workflow)
 def make_acls(sender, instance, created, **kwargs):
+    '''
+        after X workflow created 
+        create a new workflow's acls and set object = X workflow
+    '''
     if created:
         acls = AccessControlList.objects.create(
             content_type=ContentType.objects
@@ -356,6 +366,57 @@ def make_acls(sender, instance, created, **kwargs):
                         name=perm,
                     )
             acls.permissions.add(stored_permission)
+
+# after X workflow created 
+# create a new acls and set object = X workflow
+@receiver(post_save, sender=Workflow)
+def make_doc_types(sender, instance, created, **kwargs):
+    '''
+        after X workflow created 
+        create a new document types and set document type's workflow = X workflow
+    '''
+    if created:
+        doc_types = DocumentType.objects.create(
+            label=instance.label
+        )
+        instance.document_types.add(doc_types)
+        instance.save()
+        owner_acl = AccessControlList.objects.create(
+            content_type=ContentType.objects
+                .get(app_label='documents', model='documenttype'),
+            content_object=doc_types,
+            role=Role.objects.get(label=instance.created_by.username)
+        )
+
+        users_acl = AccessControlList.objects.create(
+            content_type=ContentType.objects
+                .get(app_label='documents', model='documenttype'),
+            content_object=doc_types,
+            role=Role.objects.get(label="Users")
+        )
+
+        
+
+        users_perms = [
+            {"namespace": "document_parsing", "name": "content_view"},
+            {"namespace": "documents", "name": "document_file_view"},
+            {"namespace": "documents", "name": "document_version_view"},
+            {"namespace": "documents", "name": "document_view"},
+        ]
+
+        # add all permissions to owner acls
+        for permission in Permission.all():
+            owner_acl.permissions.add(permission.stored_permission)
+        acl_set_permissions(users_acl, users_perms)
+
+def acl_set_permissions(acl, perms):
+    for perm in perms:
+        stored_permission = StoredPermission.objects.get(
+                    namespace=perm["namespace"],
+                    name=perm["name"],
+                )
+        acl.permissions.add(stored_permission)
+
 
 class WorkflowRuntimeProxy(Workflow):
     class Meta:

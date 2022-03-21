@@ -23,7 +23,8 @@ class DocumentUploadInteractiveView(ExternalObjectViewMixin, UploadBaseView):
     external_object_class = DocumentType
     external_object_permission = permission_document_create
     document_form = NewDocumentForm
-    object_permission = permission_document_create
+    # object_permission = permission_document_create # comment bcuz if user have perms from acl 
+                                                     # but not have real perms that user will see 404 page
 
     def forms_valid(self, forms):
         source_backend_instance = self.source.get_backend_instance()
