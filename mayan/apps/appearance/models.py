@@ -38,6 +38,112 @@ class Theme(ExtraDataModelMixin, models.Model):
         on_delete=models.CASCADE, to=Asset, verbose_name=_('Font file'),
         blank=True, null=True, related_name='font_asset'
     )
+    header_bg = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The background color on header components.'),
+        verbose_name=_('[Header] Background Color')
+    )
+    header_text = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The text color on header components.'),
+        verbose_name=_('[Header] Text Color')
+    )
+    body_bg = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The background color on page body.'),
+        verbose_name=_('[Body] Background Color')
+    )
+    body_text = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The text color on page body.'),
+        verbose_name=_('[Body] Text Color')
+    )
+    body_link_hover = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Hover action)The link color on page body.'),
+        verbose_name=_('[Body] Link Text Color (Hover action)')
+    )
+    body_block = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The block color on page body.'),
+        verbose_name=_('[Body] Block Background Color')
+    )
+    body_primary_btn = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The background color of primary button on page body.'),
+        verbose_name=_('[Body] Primary Button Background Color')
+    )
+    lpanel_bg = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The background color on left panel components.'),
+        verbose_name=_('[Left Panel] Background Color')
+    )
+    lpanel_collapse_btn_bg = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The background color of collapse button on left panel.'),
+        verbose_name=_('[Left Panel] Collapse Button Background Color')
+    )
+    lpanel_collapse_btn_text = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('The text color of collapse button on left panel.'),
+        verbose_name=_('[Left Panel] Collapse Button Text Color')
+    )
+    lpanel_collapse_btn_bg_hover = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Hover action)The background color of collapse button on left panel.'),
+        verbose_name=_('[Left Panel] Collapse Button Background Color(Hover action)')
+    )
+    lpanel_collapse_btn_text_hover = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Hover action)The text color of collapse button on left panel.'),
+        verbose_name=_('[Left Panel] Collapse Button Text Color(Hover action)')
+    )
+    lpanel_collapsed_panel_bg = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Active action)The background color of collapsed panel on left panel.'),
+        verbose_name=_('[Left Panel] Collapsed Panel Background Color(Active action)')
+    )
+    lpanel_collapsed_btn_text = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Active action)The text color of collapsed button on left panel.'),
+        verbose_name=_('[Left Panel] Collapsed Button Text Color(Active action)')
+    )
+    lpanel_collapsed_btn_bg_hover = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Active+Hover action)The background color of collapsed button on left panel.'),
+        verbose_name=_('[Left Panel] Collapsed Button Background Color(Active+Hover action)')
+    )
+    rnav_bg_hover = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Hover action)The background color of button on right navbar.'),
+        verbose_name=_('[Right Navbar] Button Background Color(Hover action)')
+    )
+    rnav_text_hover = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Hover action)The text color of button on right navbar.'),
+        verbose_name=_('[Right Navbar] Button Text Color(Hover action)')
+    )
+    rnav_panelex_bg = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Expanded Action)The background color of panel on right navbar menu list.'),
+        verbose_name=_('[Right Navbar] Expanded Panel Background Color(Expanded action)')
+    )
+    rnav_panelex_text = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Expanded Action)The text color of panel on right navbar menu list.'),
+        verbose_name=_('[Right Navbar] Expanded Panel Text Color(Expanded action)')
+    )
+    rnav_ex_bg_hover = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Expanded+Hover Action)The background color of panel on right navbar menu list when hover.'),
+        verbose_name=_('[Right Navbar] Expanded Panel Background Color(Expanded+Hover action)')
+    )
+    rnav_ex_text_hover = models.CharField(
+        max_length=7, blank=True,
+        help_text=_('(Expanded+Hover Action)The text color of panel on right navbar menu list when hover.'),
+        verbose_name=_('[Right Navbar] Expanded Panel Text Color(Expanded+Hover action)')
+    )
+
 
     class Meta:
         ordering = ('label',)

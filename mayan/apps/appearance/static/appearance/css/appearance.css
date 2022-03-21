@@ -1,13 +1,13 @@
 @font-face {
-    font-family: 'Prompt-Regular';
+    font-family: 'CustomFont';
     font-style: normal;
     font-weight: normal;
-    src:
-        local('Prompt-Regular'),
-        url('../fonts/Prompt-Regular.ttf') format('truetype');
+    src:    local('Prompt-Regular'),
+            url('../fonts/Prompt-Regular.ttf') format('truetype');
 }
 
 :root {
+    /* Dobby's color schemes */
     --cp_color: #0F75BD;
     --cp_color_custom: #0a5286;
     --cp_white: rgba(255,255,255,0.95);
@@ -33,52 +33,75 @@
     --cp_bluish_gray:#263238;
     --cp_test:#cddc39;
 
-    --cp_text_header: var(--cp_color);      /* 3.1/6.1 text header ---(6)*/
-    --cp_left_menu : var(--cp_white);       /*3.2 left menu background ---(1)*/
-    --cp_header : var(--cp_white);          /*3.3 header background color ---(1)*/
-    --cp_menu_box: var(--cp_white);            /*4.1 left box sidebar ---(3)*/
-    --cp_text_left_menu : var(--cp_color);           /*4.2/5.3 text left box ---(6)*/
-    --cp_hover:var(--cp_color_custom);                      /*link hover all ---(4)*/
-    --cp_hover_left:var(--cp_color);                      /*4.3 hover left box ---(4)*/
-    --cp_text_hover_expand_left:var(--cp_white);     /*4.3/5.1 text hover expand left box ---(5)*/
-    --cp_text_active: var(--cp_white);              /*4.4 text active left expand menu ---(5)*/
-    --cp_hover_expand_left:var(--cp_color);    /*5.1 hover expand left box ---(4)*/
-    --cp_menu_expand_left:var(--cp_white);          /*5.2 left expand menu background ---(8)*/
-    --cp_hover_right:var(--cp_color);           /*6.2/6.3 right hover menu ---(4)*/
-    --cp_text_hover_right:var(--cp_white);         /*6.2/6.3 text right hover ---(5)*/
-    --cp_text_hover_expand_right:var(--cp_white);   /*7.1 text right expand hover ---(5)*/
-    --cp_hover_expand_right:var(--cp_color);    /*7.1 right expand hover ---(4)*/
-    --cp_menu_expand_right:var(--cp_white);        /*7.2 expand right sidebar background ---(8)*/
-    --cp_text_expand_right:var(--cp_color);             /* 7.3 text expand right menu ---(6)*/
-    --cp_background:var(--cp_white);                /*8.1 background page ---(2)*/
-    --cp_text_backgroud:var(--cp_color_custom);             /*8.2 text background page ---(7)*/
-    --cp_block : var(--cp_gray);           /*9. block background*/
-    --cp_button : var(--cp_color);          /*10. All button ---(9)*/
-    --cp_helpblock:var(--cp_bluish_gray);            /* 11. text help block */
+
+    /* header section */
+    --cp_header_bg: var(--cp_white);          /*3.3 header background color ---(1)*/
+    --cp_header_text: var(--cp_color);      /* 3.1/6.1 text header ---(6)*/
+    
+
+    /* body */
+    --cp_body_bg: var(--cp_white);                /*8.1 background page ---(2)*/
+    --cp_body_text: var(--cp_color_custom);             /*8.2 text background page ---(7)*/
+    --cp_body_link_hover: var(--cp_color_custom);                      /*link hover all ---(4)*/
+    --cp_body_block: var(--cp_gray);           /*9. block background*/
+    --cp_body_primary_btn: var(--cp_color);          /*10. All button ---(9)*/
+    --cp_body_helpblock: var(--cp_bluish_gray);            /* 11. text help block */
+    
+
+    /* left panel section */
+    /* left panel bg */
+    --cp_lpanel_bg: var(--cp_white);       /*3.2 left menu background ---(1)*/
+    /* collapse btn */
+    --cp_lpanel_collapse_btn_bg: var(--cp_white);            /*4.1 left box sidebar ---(3)*/
+    --cp_lpanel_collapse_btn_text: var(--cp_color);           /*4.2/5.3 text left box ---(6)*/
+    --cp_lpanel_collapse_btn_bg_hover: var(--cp_color);                      /*4.3 hover left box ---(4)*/
+    --cp_lpanel_collapse_btn_text_hover: var(--cp_white);     /*4.3/5.1 text hover expand left box ---(5)*/
+    /* collapsed btn */
+    --cp_lpanel_collapsed_panel_bg: var(--cp_white);          /*5.2 left expand menu background ---(8)*/
+    --cp_lpanel_collapsed_btn_text: var(--cp_white);              /*4.4 text active left expand menu ---(5)*/
+    --cp_lpanel_collapsed_btn_bg_hover: var(--cp_color);    /*5.1 hover expand left box ---(4)*/
+
+
+    /* right navbar */
+    --cp_rnav_bg_hover: var(--cp_color);           /*6.2/6.3 right hover menu ---(4)*/
+    --cp_rnav_text_hover: var(--cp_white);         /*6.2/6.3 text right hover ---(5)*/
+    --cp_rnav_panelex_bg: var(--cp_white);        /*7.2 expand right sidebar background ---(8)*/
+    --cp_rnav_panelex_text: var(--cp_color);             /* 7.3 text expand right menu ---(6)*/
+    --cp_rnav_ex_bg_hover: var(--cp_color);    /*7.1 right expand hover ---(4)*/
+    --cp_rnav_ex_text_hover: var(--cp_white);   /*7.1 text right expand hover ---(5)*/
 }
+
+* {
+    font-family: 'CustomFont', Helvetica !important;
+    font-weight: 700;
+}
+
 body {
-    background-color: var(--cp_background); /*8.1 background page*/
-    color: var(--cp_text_backgroud);     /*8.2 text ex. home page, g1sec2*/
-   }
+    background-color: var(--cp_body_bg); /*8.1 background page*/
+    color: var(--cp_body_text);     /*8.2 text ex. home page, g1sec2*/
+}
 
 a {
     color: var(--cp_color);
 }
-.aria-controls{
+
+.aria-controls {
     color: var(--cp_color) !important;
 }
+
 a:hover {
-    color: var(--cp_hover); /* hover link ex. view detail (Home page)*/
+    color: var(--cp_body_link_hover); /* hover link ex. view detail (Home page)*/
 }
+
 .navbar-default .navbar-nav>li>a:hover {
-    color: var(--cp_text_hover_right) !important;       /*6.2 text right hover*/
-    background-color: var(--cp_hover_right) !important;  /*6.2 menu right hover*/
+    color: var(--cp_rnav_text_hover) !important;       /*6.2 text right hover*/
+    background-color: var(--cp_rnav_bg_hover) !important;  /*6.2 menu right hover*/
     transition: all .2s ease;
 }
 
 .btn-primary {
     color: var(--cp_white) !important;
-    background-color: var(--cp_button) !important; /*10. button*/
+    background-color: var(--cp_body_primary_btn) !important; /*10. button*/
 }
 
 .btn {
@@ -91,29 +114,29 @@ a:hover {
 }
 
 .btn:hover {
-    /* box-shadow: 0px 15px 20px var(--cp_button); */
+    /* box-shadow: 0px 15px 20px var(--cp_body_primary_btn); */
     transform: translateY(-2px);
   }
 
 .help-block{
-    color: var(--cp_helpblock);    /*11. help block*/
+    color: var(--cp_body_helpblock);    /*11. help block*/
 }
 
 .panel-primary>.panel-heading {
-    color: var(--cp_white);
-    background-color: var(--cp_color);
-    border-color: var(--cp_color);
+    color: var(--cp_header_text);
+    background-color: var(--cp_header_bg);
+    border-color: var(--cp_header_bg);
 }
 
 .panel-primary>.panel-heading a {
-    color: var(--cp_white) !important;
+    color: var(--cp_header_text) !important;
 }
 
 #navbar{
-    background-color:var(--cp_header)   /*header background*/
+    background-color:var(--cp_header_bg);   /*header background*/
 }
 .dropdown-menu, .dropdown-menu li a{
-    background-color:var(--cp_menu_expand_right); /*7.2 expand right sidebar background*/
+    background-color:var(--cp_rnav_panelex_bg); /*7.2 expand right sidebar background*/
 } 
 
 .navbar-brand {
@@ -121,7 +144,7 @@ a:hover {
     font-weight: 700;
 }
 .center-block, .well{
-    background-color:var(--cp_block)  /*9. block background*/
+    background-color:var(--cp_body_block)  /*9. block background*/
 }
 
 #appearance-main-viewport {
@@ -491,13 +514,13 @@ a i {
 
 /* custom navbar */
 .navbar, .navbar a {
-    background-color: var(--cp_header); /* header a color */
+    background-color: var(--cp_header_bg); /* header a color */
 }
 /* .navbar {
     color: purple;   /* text expand right menu 
 } */
 .navbar a {
-    color: var(--cp_text_header) !important;  /*3. navbar header text  */
+    color: var(--cp_header_text) !important;  /*3. navbar header text  */
 }
 
 /* menu_main */
@@ -505,7 +528,7 @@ a i {
 
 #menu-main {
     display: block;
-    background-color: var(--cp_left_menu); /* left menu background  */
+    background-color: var(--cp_lpanel_bg); /* left menu background  */
     border-right: 1px solid var(--cp_color); /* cp color */
     bottom: 0;
     left: -210px;
@@ -542,7 +565,7 @@ a i {
 }
 
 .menu-user-name {
-    color: var(--cp_text_header);
+    color: var(--cp_header_text);
     font-weight: 700;
 }
 
@@ -610,7 +633,7 @@ a i {
     width: 100%;
 }
 .panel.panel-default{
-    background-color:var(--cp_menu_box); /* menu box color*/
+    background-color:var(--cp_lpanel_collapse_btn_bg); /* menu box color*/
 }
 
 #accordion-sidebar a {
@@ -618,8 +641,8 @@ a i {
 }
 
 #accordion-sidebar a[aria-expanded="true"] {
-    background: var(--cp_hover_left); /*4.4 press expand left menu */
-    color: var(--cp_text_active) !important;    /*4.4 press text expand left menu */
+    background: var(--cp_lpanel_collapse_btn_bg_hover); /*4.4 press expand left menu */
+    color: var(--cp_lpanel_collapsed_btn_text) !important;    /*4.4 press text expand left menu */
     font-weight: 700;
 }
 
@@ -634,7 +657,7 @@ a i {
 
 #accordion-sidebar > .panel > div > div > ul > li > a,
 #accordion-sidebar > .panel > div > h4 > a {
-    color: var(--cp_text_left_menu); /*4.2/5.3  text left menu */
+    color: var(--cp_lpanel_collapse_btn_text); /*4.2/5.3  text left menu */
     text-decoration: none;
     outline: none;
     position: relative;
@@ -648,7 +671,7 @@ a i {
 }
 
 #accordion-sidebar .panel-heading:hover {
-    background-color: var(--cp_hover_left); /* box/ left menu*/
+    background-color: var(--cp_lpanel_collapse_btn_bg_hover); /* box/ left menu*/
     color: var(--cp_white) !important; /* white color */
     transition: .1s ease;
 }
@@ -658,12 +681,12 @@ a i {
 }
 
 #accordion-sidebar > .panel > div > .panel-body > ul > li:hover {
-    background-color: var(--cp_hover_expand_left); /* (hover) expand left sidebar*/
+    background-color: var(--cp_lpanel_collapsed_btn_bg_hover); /* (hover) expand left sidebar*/
     transition: .1s ease;
 }
 
 #accordion-sidebar a:hover {
-    color: var(--cp_text_hover_expand_left) !important; /* text hover expand left menu*/
+    color: var(--cp_lpanel_collapse_btn_text_hover) !important; /* text hover expand left menu*/
     font-weight: 700;
 }
 
@@ -674,7 +697,7 @@ a i {
 #accordion-sidebar .panel-body {
     font-size: 13px;
     border: 0px;
-    background-color: var(--cp_menu_expand_left); /*left expand menu /dropdown */
+    background-color: var(--cp_lpanel_collapsed_panel_bg); /*left expand menu /dropdown */
     padding-top: 3px;
     padding-left: 20px;
     padding-right: 0px;
@@ -704,14 +727,14 @@ a i {
 }
 
 .navbar-default .navbar-nav>.open>a {
-    background-color: var(--cp_hover_right) !important; /*6.3 active right menu */
-    color: var(--cp_text_hover_right) !important; /*6.3 text right active menu */
+    background-color: var(--cp_rnav_bg_hover) !important; /*6.3 active right menu */
+    color: var(--cp_rnav_text_hover) !important; /*6.3 text right active menu */
     font-weight: 700;
 }
 
 .dropdown-menu>li>a:hover, .dropdown-menu>li>a:focus{
-    background-color: var(--cp_hover_expand_right); /*7.1 (hover) expand right menu */
-    color: var(--cp_text_hover_expand_right) !important; /*7.1 (text hover) expand right menu */
+    background-color: var(--cp_rnav_ex_bg_hover); /*7.1 (hover) expand right menu */
+    color: var(--cp_rnav_ex_text_hover) !important; /*7.1 (text hover) expand right menu */
     transition: .1s ease;
     font-weight: 700;
 }
@@ -751,7 +774,7 @@ a i {
 }
 
 .dropdown-menu > li > a {
-    color: var(--cp_text_expand_right) !important     /* 7.3 text expand right menu */
+    color: var(--cp_rnav_panelex_text) !important     /* 7.3 text expand right menu */
 }
 
 .dropdown-header {
