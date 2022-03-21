@@ -8,11 +8,12 @@ from mayan.apps.converter.models import Asset
 
 from django.forms.widgets import TextInput
 
+from django.core.validators import FileExtensionValidator
+
 
 class ThemeForm(forms.ModelForm):
-    
-    logo_file = forms.ImageField(required=False)
-    font_file = forms.FileField(required=False)
+    logo_file = forms.ImageField(required=False, validators=[FileExtensionValidator(['png','jpg','jpeg','webp'])])
+    font_file = forms.FileField(required=False, validators=[FileExtensionValidator(['woff2','woff','ttf','otf'])])
 
     class Meta:
         fields = (
