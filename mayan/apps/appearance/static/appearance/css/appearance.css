@@ -6,6 +6,14 @@
             url('../fonts/Prompt-Regular.ttf') format('truetype');
 }
 
+@font-face {
+    font-family: 'CustomFontHeader';
+    font-style: normal;
+    font-weight: normal;
+    src:    local('Prompt-Regular'),
+            url('../fonts/Prompt-Regular.ttf') format('truetype');
+}
+
 :root {
     /* Dobby's color schemes */
     --cp_color: #0F75BD;
@@ -71,7 +79,7 @@
     --cp_rnav_ex_text_hover: var(--cp_white);   /*7.1 text right expand hover ---(5)*/
 }
 
-* {
+*:not(.navbar-brand) {
     font-family: 'CustomFont', Helvetica !important;
     font-weight: 700;
 }
@@ -140,7 +148,7 @@ a:hover {
 } 
 
 .navbar-brand {
-    font-family: "Prompt-Regular", serif;
+    font-family: "CustomFontHeader", Helvetica !important;
     font-weight: 700;
 }
 .center-block, .well{

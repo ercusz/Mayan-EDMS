@@ -118,6 +118,36 @@ def appearance_get_font():
     return font_url
 
 @register.simple_tag
+def appearance_get_font_header():
+    try:
+        font_url = Theme.objects.get(default=True).font_header_asset.get_api_file_url()
+    except:
+        return "../fonts/Prompt-Regular.ttf"
+
+    return font_url
+
+@register.simple_tag
+def appearance_get_header_text():
+    try:
+        text = Theme.objects.get(default=True).header_text_brand
+    except:
+        return _("College of Computing")
+    else:
+        if not text == '':
+            return Theme.objects.get(default=True).header_text_brand
+
+    return _("College of Computing")
+
+@register.simple_tag
+def appearance_get_header_text_size():
+    try:
+        size = Theme.objects.get(default=True).header_text_brand_size
+    except:
+        return 19
+
+    return size
+
+@register.simple_tag
 def appearance_icon_render(icon, enable_shadow=False):
     return icon.render(extra_context={'enable_shadow': enable_shadow})
 

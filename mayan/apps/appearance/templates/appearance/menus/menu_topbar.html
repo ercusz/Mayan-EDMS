@@ -17,10 +17,9 @@
                 <!-- <a class="navbar-brand" href="{% url home_view %}">{% smart_setting 'COMMON_PROJECT_TITLE' %}</a> -->
                 <a class="navbar-brand" href="{% url home_view %}">
                     <img src="{% appearance_get_logo %}" style="height: 38px;" alt="College of Computing">
-                    {% trans 'College of Computing' %}
+                    {% appearance_get_header_text %}
                 </a>
             </div>
-
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav navbar-right">
                     {% navigation_resolve_menu name='topbar' as topbar_menus_results %}

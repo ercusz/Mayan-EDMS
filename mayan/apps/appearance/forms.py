@@ -10,14 +10,22 @@ from django.forms.widgets import TextInput
 
 from django.core.validators import FileExtensionValidator
 
+from mayan.apps.acls.models import AccessControlList
+
+from mayan.apps.permissions.models import Role, StoredPermission
+
+from django.contrib.contenttypes.models import ContentType
+
 
 class ThemeForm(forms.ModelForm):
     logo_file = forms.ImageField(required=False, validators=[FileExtensionValidator(['png','jpg','jpeg','webp'])])
     font_file = forms.FileField(required=False, validators=[FileExtensionValidator(['woff2','woff','ttf','otf'])])
+    font_header_file = forms.FileField(required=False, validators=[FileExtensionValidator(['woff2','woff','ttf','otf'])])
 
     class Meta:
         fields = (
-            'default', 'label', 'logo_file', 'font_file',
+            'default', 'label', 'logo_file', 'font_file', 'font_header_file',
+            'header_text_brand', 'header_text_brand_size',
             'header_bg', 'header_text', 'body_bg', 'body_text',
             'body_link_hover', 'body_block', 'body_primary_btn',
             'lpanel_bg', 'lpanel_collapse_btn_bg',
@@ -30,6 +38,11 @@ class ThemeForm(forms.ModelForm):
         model = Theme
         widgets = {
             'font_file': forms.FileInput(
+                attrs={
+                    'accept': '.woff2, .woff, .ttf, .otf'
+                }
+            ),
+            'font_header_file': forms.FileInput(
                 attrs={
                     'accept': '.woff2, .woff, .ttf, .otf'
                 }
@@ -61,6 +74,7 @@ class ThemeForm(forms.ModelForm):
         obj = super().save(commit=False)
         logo_label = obj.label + '_logo'
         font_label = obj.label + '_font'
+        font_header_label = obj.label + '_header_font'
         stylesheet = f'''
         :root {{
             /* header section */
@@ -116,11 +130,16 @@ class ThemeForm(forms.ModelForm):
             {'--cp_rnav_ex_text_hover: ' + self.cleaned_data['rnav_ex_text_hover'] + ';'
                 if self.cleaned_data['rnav_ex_text_hover'] is not None else ''}
         }}
+
+        .navbar-brand {{
+            {'font-size: ' + str(self.cleaned_data['header_text_brand_size']) + 'px !important;'}
+        }}
         '''
 
         logo_asset, created = Asset.objects.get_or_create(label=logo_label, internal_name=logo_label)
         font_asset, created = Asset.objects.get_or_create(label=font_label, internal_name=font_label)
-        
+        font_header_asset, created = Asset.objects.get_or_create(label=font_header_label, internal_name=font_header_label)
+
         logo_file = self.cleaned_data['logo_file']
         if logo_file is not None:
             logo_asset.file = logo_file
@@ -132,7 +151,13 @@ class ThemeForm(forms.ModelForm):
             font_asset.file = font_file
             font_asset.save()
             obj.font_asset = font_asset
-        
+
+        font_header_file = self.cleaned_data['font_header_file']
+        if font_file is not None:
+            font_header_asset.file = font_header_file
+            font_header_asset.save()
+            obj.font_header_asset = font_header_asset
+
         obj.stylesheet = stylesheet
 
         if commit:
