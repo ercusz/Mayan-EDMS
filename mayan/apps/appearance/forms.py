@@ -153,7 +153,7 @@ class ThemeForm(forms.ModelForm):
             obj.font_asset = font_asset
 
         font_header_file = self.cleaned_data['font_header_file']
-        if font_file is not None:
+        if font_header_file is not None:
             font_header_asset.file = font_header_file
             font_header_asset.save()
             obj.font_header_asset = font_header_asset
